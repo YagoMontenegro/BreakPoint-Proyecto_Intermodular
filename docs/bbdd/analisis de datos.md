@@ -1,1 +1,0 @@
-explicar los diagramas

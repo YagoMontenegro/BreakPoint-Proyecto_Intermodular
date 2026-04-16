@@ -125,3 +125,4 @@ Estudiante de 1º de DAW · Prometeo by The Power
 ---
 
 *Proyecto desarrollado entre abril y mayo de 2026.*
+
