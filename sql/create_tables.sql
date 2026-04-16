@@ -1,6 +1,8 @@
 -- CREACIÓN DE LA BASE DE DATOS
 
+drop database if exists BreakPoint;
 create database BreakPoint;
+use BreakPoint;
 
 
 -- CREACIÓN DE LAS TABLAS
@@ -38,7 +40,7 @@ create table cuotas_socios (
     mes tinyint not null check (mes between 1 and 12),
     anio int unsigned not null,
     estado_cuota enum ('pendiente','pagada','vencida') default 'pendiente' not null,
-    importe decimal(10,2) not null check (importe > 0) default 30.00,
+    importe decimal(10,2) not null default 30.00 check (importe > 0),
     constraint cuota_unica unique (id_socio, mes, anio),
     constraint fk_socios_cuotas_socios foreign key (id_socio) references socios (id_socio)
         on delete restrict
@@ -53,7 +55,7 @@ create table torneos (
     fecha_fin datetime null,
         -- la fecha_fin es null hasta que finaliza el torneo
     max_participantes tinyint unsigned not null,
-    premios text(250) not null,
+    premios varchar(250) not null,
     estado_torneo enum ('abierto','en_curso','finalizado') not null default 'abierto',    
     constraint chck_participantes check (max_participantes > 0),
     constraint chck_fechas_torneo check (fecha_fin > fecha_inicio)
@@ -62,10 +64,10 @@ create table torneos (
 create table reservas (
     id_reserva int unsigned auto_increment primary key,
     id_usuario int unsigned not null, 
-    id_mesa int unsigned not null,
+    id_mesa tinyint unsigned not null,
     hora_inicio datetime not null,
     hora_fin datetime not null,
-    coste decimal(10,2) not null check (coste >= 0) default 0.00,
+    coste decimal(10,2) not null default 0.00 check (coste >= 0),
         -- Coste socio = 0.00€/h // Coste usuario 6€/h
         -- es necesario hacer una relacion con id_socio? cómo le hago saber en coste que socio es 0 pero usuario es X?
     estado_reserva enum ('confirmada','cancelada','completada') default 'confirmada' not null,
@@ -75,8 +77,8 @@ create table reservas (
     constraint fk_reserva_mesa foreign key (id_mesa) references mesas (id_mesa)
         on delete restrict 
         on update cascade,
+        -- si hora_fin es 17.00, permite que la siguiente hora_inicio sea 17.00?
     constraint chck_horas check (hora_fin > hora_inicio)
-        --si hora_fin es 17.00, permite que la siguiente hora_inicio sea 17.00?
 );
 
 create table inscripciones (

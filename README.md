@@ -1,39 +1,49 @@
 # BreakPoint — Club de Billar
 
-Portal web corporativo del club de billar privado **BreakPoint**, desarrollado como Proyecto Intermodular de 1º de DAW en Prometeo by The Power.
+> Proyecto Intermodular de 1º de DAW · Prometeo by The Power
 
 ---
 
 ## ¿Qué es este proyecto?
 
-BreakPoint es un club de billar privado ficticio. Este repositorio contiene el desarrollo completo de su portal web corporativo, incluyendo la base de datos, la aplicación de gestión interna, la documentación técnica del sistema y la web pública del club.
+**BreakPoint** es el portal web corporativo y sistema de gestión de un club privado de billar ficticio.
+El proyecto combina una web informativa con una aplicación de gestión interna, conectada a una base de datos real, para digitalizar el funcionamiento del club.
 
-El proyecto integra todos los módulos de 1º de DAW en torno a una empresa ficticia de la forma más real y coherente.
+Este proyecto ha sido desarrollado como **Proyecto Intermodular de 1º de DAW**, integrando los conocimientos de los módulos de Bases de Datos, Programación (y MPO), Lenguaje de Marcas, Sistemas Informáticos y Entornos de Desarrollo.
+
+---
+
+## La empresa ficticia
+
+**BreakPoint, Club de Billar** es un club privado que ofrece los siguientes servicios:
+
+- **Alquiler de mesas por horas** — reserva online con precios diferenciados para socios y no socios
+- **Torneos internos** — competiciones periódicas entre socios con historial de resultados
+- **Tienda de accesorios** — venta de material básico 
+- **Zona Chill out** - Espacio reservado para descanso entre sesiones o visualización de campeonatos oficiales en streaming.
+
+---
 
 ## ¿Qué problema resuelve?
 
-Sin esta solución, el club gestionaría todo manualmente: llamadas para reservas, apuntes en papel, sin control de disponibilidad de mesas ni registro de socios.
+Sin esta solución, el club gestionaría todo de forma manual: reservas por teléfono, apuntes en papel y sin control de disponibilidad de mesas. BreakPoint lo digitaliza:
 
-BreakPoint lo digitaliza todo:
-
-- Elimina la gestión en papel de socios, reservas y torneos
+- Elimina la gestión en papel de socios y reservas
 - Evita conflictos de horario mostrando disponibilidad real de mesas
 - Centraliza la información de clientes, pagos y reservas en una base de datos
-- Da imagen profesional al club frente a competidores
+- Da imagen profesional al club
 
-## ¿A quién va dirigido?
+---
 
-- **Socios actuales** que quieren reservar mesa, apuntarse a torneos o consultar su información
-- **Nuevos clientes** que quieren conocer el club, ver tarifas y hacerse socios
-- **Personal del club** que necesita gestionar el día a día (altas, reservas, inscripciones...)
+## A quién va dirigido
 
-## Servicios que ofrece
+| Perfil | Uso |
+|---|---|
+| **Socios actuales** | Consultar su información, reservar mesas sin coste y acceso a torneos |
+| **Nuevos clientes** | Conocer el club, tarifas y hacerse socios |
+| **Personal del club** | Gestionar altas, reservas y ventas |
 
-- **Alquiler de mesas** — reserva por tramos horarios (gratuito para socios, €/h para no socios)
-- **Alta como socio** — acceso preferente, descuentos en tienda y participación en torneos
-- **Torneos internos** — organización de competiciones periódicas entre socios
-- **Tienda de accesorios** — guantes, tizas, suelas, productos de mantenimiento
-- **Zona multimedia** — retransmisiones en vivo de campeonatos oficiales
+---
 
 ## Tecnologías utilizadas
 
@@ -45,50 +55,73 @@ BreakPoint lo digitaliza todo:
 | **MySQL** | Base de datos relacional |
 | **Git + GitHub** | Control de versiones y entrega del proyecto |
 
+---
+
 ## Estructura del repositorio
 
 ```
-BreakPoint/
-├── diagrams/          # Diagramas E/R y otros diagramas del proyecto
-├── docs/
-│   ├── bbdd/          # Documentación del módulo de Bases de Datos
-│   ├── general/       # Documentación general del proyecto
-│   └── sistemas/      # Informe técnico de Sistemas Informáticos
-├── sql/               # Scripts SQL (creación de tablas, datos, consultas)
-├── src/               # Código fuente Java (aplicación de gestión)
-├── web/
-│   └── assets/        # Recursos estáticos (imágenes, iconos, fuentes)
+breakpoint-club/
+│
+├── web/                  → Portal web (HTML + CSS)
+│   ├── index.html
+│   ├── css/
+│   └── assets/
+│
+├── src/                  → Código fuente Java
+│   └── ...
+│
+├── sql/                  → Scripts de base de datos
+│   ├── create_tables.sql
+│   ├── insert_data.sql
+│   └── queries.sql
+│
+├── docs/                 → Documentación del proyecto
+│   ├── sistemas/         → Informe técnico (Sistemas Informáticos)
+│   ├── diagrams/         → Diagrama E/R y modelo relacional
+│	├── bbdd
+│
 └── README.md
 ```
 
-## Módulos del Proyecto Intermodular
+---
 
-| Módulo | Contenido |
-|---|---|
-| **0484 – Bases de Datos** | Análisis de datos, diagrama E/R, modelo relacional, scripts SQL y consultas |
-| **0487 – Entornos de Desarrollo** | Repositorio GitHub, historial de commits, documentación |
-| **0373 – Lenguajes de Marcas** | Portal web en HTML + CSS (cara pública del club) |
-| **0485 – Programación** | Aplicación Java con conexión JDBC para gestión interna |
-| **0483 – Sistemas Informáticos** | Informe técnico del entorno de ejecución |
-| **CMO – Ampliación de Programación** | Mejora estructural con POO y separación de responsabilidades |
+## Cómo ejecutar el proyecto
 
-## Cómo visualizar la web
+### Portal web
+Abrir el archivo `web/index.html` directamente en cualquier navegador. No requiere servidor.
 
-1. Clona el repositorio
-2. Abre el archivo `web/index.html` en tu navegador
+### Aplicación Java
+```bash
+# Requisitos: Java 17+, MySQL 8+
+# 1. Importar la base de datos
+mysql -u root -p < sql/create_tables.sql
+mysql -u root -p < sql/insert_data.sql
 
-No requiere servidor ni instalación adicional para la parte frontend.
-
-## Cómo ejecutar la aplicación Java
-
-> Próximamente — se detallará en `docs/general/` conforme avance el desarrollo.
-
-Requisitos previstos: JDK 17+, MySQL/MariaDB, conector JDBC.
-
-## Estado del proyecto
-
-En desarrollo — Proyecto Intermodular 1º DAW (marzo–mayo 2026)
+# 2. Configurar la conexión en src/config/DBConnection.java
+# 3. Compilar y ejecutar desde el IDE (IntelliJ IDEA o Eclipse)
+```
 
 ---
 
-*Proyecto ficticio desarrollado con fines educativos para el ciclo formativo de Técnico Superior en Desarrollo de Aplicaciones Web.*
+## Módulos del proyecto
+
+| Módulo | Entregable |
+|---|---|
+| **Bases de Datos (0484)** | Diagrama E/R, modelo relacional, scripts SQL, consultas |
+| **Entornos de Desarrollo (0487)** | Repositorio GitHub, commits, README |
+| **Lenguajes de Marcas (0373)** | Portal web en HTML + CSS |
+| **Programación (0485)** | Aplicación Java con JDBC y operaciones CRUD |
+| **Sistemas Informáticos (0483)** | Informe técnico del entorno de ejecución |
+| **MPO Ampliación de Programación** | Diseño POO, arquitectura por capas, mejora estructural |
+
+---
+
+## Autor
+
+**[Yago Montenegro Díaz-Flores]**  
+Estudiante de 1º de DAW · Prometeo by The Power  
+[https://github.com/YagoMontenegro/BreakPoint-Proyecto_Intermodular]
+
+---
+
+*Proyecto desarrollado entre abril y mayo de 2026.*

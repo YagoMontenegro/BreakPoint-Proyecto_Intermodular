@@ -22,7 +22,7 @@ BreakPoint — Club de Billar
         - Torneos internos
             El club organiza torneos periódicos entre socios, con modalidad, fecha, participantes e historial de resultados. Dependiendo del torneo así como de la participación, los premios variarán en función de lo que decida la directiva.
 
-        - Tienda de accesorios
+        - Tienda física de accesorios
             Venta de material básico para jugadores (los socios pueden acceder a ofertas o descuentos si los hubiere):
             - Guantes
             - Tizas y portatizas
