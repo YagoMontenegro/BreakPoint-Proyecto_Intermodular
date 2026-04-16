@@ -96,3 +96,4 @@ create table inscripciones (
         on update cascade,
     constraint inscrip_unica unique (id_socio, id_torneo)
 );
+

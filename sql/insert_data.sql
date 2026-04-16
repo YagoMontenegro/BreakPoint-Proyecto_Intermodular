@@ -162,7 +162,7 @@ INSERT INTO torneos (nombre, modalidad, fecha_inicio, fecha_fin, max_participant
 ('Torneo de Otoño 2026', 'bola_9', '2026-09-15 10:00:00', NULL, 12, 'Bono de 6 meses de cuota + trofeo', 'abierto'),
 ('Copa BreakPoint Invierno 2026', 'bola_10', '2026-11-10 10:00:00', NULL, 16, 'Premio en metálico 150€ + taco', 'abierto');
 
--- CUOTAS (1034 cuotas mensuales generadas)
+-- CUOTAS 
 INSERT INTO cuotas_socios (id_socio, fecha_pago, mes, anio, estado_cuota, importe) VALUES
 (1, '2023-01-10 16:00:00', 1, 2023, 'pagada', 30.00),
 (1, '2023-02-11 13:00:00', 2, 2023, 'pagada', 30.00),
@@ -1199,7 +1199,7 @@ INSERT INTO cuotas_socios (id_socio, fecha_pago, mes, anio, estado_cuota, import
 (40, '2025-10-04 15:00:00', 10, 2025, 'pagada', 30.00),
 (40, '2025-11-06 11:00:00', 11, 2025, 'pagada', 30.00);
 
--- INSCRIPCIONES A TORNEOS (229)
+-- INSCRIPCIONES A TORNEOS 
 INSERT INTO inscripciones (id_socio, id_torneo, fecha_inscripcion, resultado) VALUES
 (1, 1, '2023-03-14 00:00:00', 1),
 (2, 1, '2023-03-06 23:00:00', 3),
@@ -1431,7 +1431,7 @@ INSERT INTO inscripciones (id_socio, id_torneo, fecha_inscripcion, resultado) VA
 (16, 23, '2026-10-19 22:00:00', NULL),
 (20, 23, '2026-10-22 01:00:00', NULL);
 
--- RESERVAS (277)
+-- RESERVAS 
 INSERT INTO reservas (id_usuario, id_mesa, hora_inicio, hora_fin, coste, estado_reserva) VALUES
 (3, 9, '2023-04-22 18:00:00', '2023-04-22 20:00:00', 0.00, 'completada'),
 (1, 2, '2023-06-15 17:00:00', '2023-06-15 20:00:00', 0.00, 'completada'),
@@ -1710,3 +1710,4 @@ INSERT INTO reservas (id_usuario, id_mesa, hora_inicio, hora_fin, coste, estado_
 (10, 7, '2026-05-22 19:00:00', '2026-05-22 20:00:00', 0.00, 'confirmada'),
 (15, 3, '2026-05-23 18:00:00', '2026-05-23 20:00:00', 0.00, 'confirmada'),
 (6, 9, '2026-05-30 20:00:00', '2026-05-30 23:00:00', 0.00, 'confirmada');
+
