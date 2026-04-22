@@ -32,6 +32,9 @@ BreakPoint — Club de Billar
         - Zona de descanso y multimedia
             Espacio reservado para descansar entre sesiones o visualizar retansmisiones en vivo de los campeonatos oficiales que normalmente requieren de una suscripción a una plataforma de streaming.
 
+        - Taller de reparaciones
+            Pequeño espacio reservado para reparaciones sencillas de los tacos o mantenimiento. Accesible por cualquier usuario, socio, no socio o externo al club.
+
         
     ¿Qué problema resuelve?
         Sin esta solución, el club gestionaría todo a mano: llamadas por teléfono para reservas, apuntes en papel, sin control de qué mesas están libres ni quién es socio. 

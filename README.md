@@ -1,6 +1,6 @@
 # BreakPoint — Club de Billar
 
-> Proyecto Intermodular de 1º de DAW · Prometeo by The Power
+> Proyecto Intermodular de 1º de DAW · Prometeo by The Power 
 
 ---
 
@@ -21,6 +21,8 @@ Este proyecto ha sido desarrollado como **Proyecto Intermodular de 1º de DAW**,
 - **Torneos internos** — competiciones periódicas entre socios con historial de resultados
 - **Tienda de accesorios** — venta de material básico 
 - **Zona Chill out** - Espacio reservado para descanso entre sesiones o visualización de campeonatos oficiales en streaming.
+- **Taller de raparaciones** - Pequeño espacio reservado para reparaciones sencillas de los tacos o mantenimiento.
+
 
 ---
 

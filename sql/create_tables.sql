@@ -8,7 +8,7 @@ use BreakPoint;
 -- CREACIÓN DE LAS TABLAS
 
 create table usuarios (
-    id_usuario int unsigned auto_increment primary key,
+    id_usuario int auto_increment primary key,
     nombre varchar(50) not null,
     apellidos varchar(100) not null,
     email varchar(50) not null unique,
@@ -17,13 +17,13 @@ create table usuarios (
 );
 
 create table mesas (
-    id_mesa tinyint unsigned auto_increment primary key,
+    id_mesa tinyint auto_increment primary key,
     estado_mesa enum ('disponible','reservada','mantenimiento') default 'disponible' not null
 );
 
 create table socios (
-    id_socio int unsigned auto_increment primary key,
-    id_usuario int unsigned not null unique,
+    id_socio int auto_increment primary key,
+    id_usuario int not null unique,
     fecha_alta datetime not null,
     fecha_baja datetime null,
     estado_socio enum ('activo','cancelado','mantenimiento') default 'activo' not null,
@@ -34,21 +34,22 @@ create table socios (
 );
 
 create table cuotas_socios (
-    id_cuota int unsigned auto_increment primary key,
-    id_socio int unsigned not null,
+    id_cuota int auto_increment primary key,
+    id_socio int not null,
     fecha_pago datetime null,
     mes tinyint not null check (mes between 1 and 12),
-    anio int unsigned not null,
+    anio int not null,
     estado_cuota enum ('pendiente','pagada','vencida') default 'pendiente' not null,
     importe decimal(10,2) not null default 30.00 check (importe > 0),
     constraint cuota_unica unique (id_socio, mes, anio),
     constraint fk_socios_cuotas_socios foreign key (id_socio) references socios (id_socio)
         on delete restrict
         on update cascade
+        -- REVISAR: mes y anio -> datetime(clase 22/04 bases de datos)
 );
 
 create table torneos (
-    id_torneo int unsigned auto_increment primary key,
+    id_torneo int auto_increment primary key,
     nombre varchar(100) not null,
     modalidad enum ('bola_8','bola_9','bola_10') null,
     fecha_inicio datetime not null,
