@@ -974,6 +974,289 @@ ul {
 
 /* #region TALLER DE REPARACION.HTML */
 
+.taller-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- HERO --- */
+.taller-hero {
+    display: flex;
+    align-items: center;
+    gap: var(--espaciado-2);
+    padding: var(--espaciado-2) 6rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.taller-hero-texto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: flex-start;
+}
+
+.taller-hero-texto .boton-primario {
+    margin-left: 6rem;
+    width: fit-content;
+}
+
+.taller-categoria {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-destacado);
+    opacity: 0.8;
+}
+
+.taller-hero-texto h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--color-texto);
+}
+
+.taller-highlight {
+    color: var(--color-destacado);
+}
+
+.taller-hero-texto p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    line-height: 1.8;
+    max-width: 520px;
+}
+
+.taller-hero-img {
+    flex-shrink: 0;
+    width: 520px;
+    height: 380px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 2px solid rgba(245, 197, 24, 0.2);
+}
+
+.taller-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.taller-hero-img:hover img {
+    transform: scale(1.04);
+}
+
+/* --- SENSHI --- */
+.taller-senshi {
+    display: flex;
+    align-items: center;
+    gap: var(--espaciado-2);
+    padding: var(--espaciado-2) 6rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.taller-senshi-img {
+    flex-shrink: 0;
+    width: 520px;
+    height: 380px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 2px solid rgba(245, 197, 24, 0.2);
+}
+
+.taller-senshi-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.taller-senshi-img:hover img {
+    transform: scale(1.04);
+}
+
+.taller-senshi-texto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: flex-start;
+}
+
+.taller-senshi-logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.taller-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1e1e1e;
+    background-color: var(--color-destacado);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    white-space: nowrap;
+}
+
+.taller-senshi-logo {
+    height: 150px;
+    width: auto;
+    opacity: 0.9;
+}
+
+.taller-senshi-texto h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-texto);
+}
+
+.taller-senshi-texto p {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    line-height: 1.8;
+}
+
+.taller-boton-senshi {
+    align-self: center;
+    width: fit-content;
+    margin-top: 0.5rem;
+}
+
+/* --- SERVICIOS --- */
+.taller-servicios-section {
+    padding: var(--espaciado-2) 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.taller-servicios-titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-destacado);
+    text-align: center;
+}
+
+.taller-servicios-intro {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    text-align: center;
+    max-width: 680px;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.taller-servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espaciado-1);
+    width: 100%;
+    max-width: 900px;
+}
+
+.taller-servicio-card {
+    background-color: var(--color-secundario);
+    border-radius: var(--radius);
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    text-align: center;
+    align-items: center;
+    box-shadow: var(--shadow);
+    border-top: 3px solid rgba(245, 197, 24, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.taller-servicio-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.5);
+    border-color: var(--color-destacado);
+}
+
+.taller-servicio-icono {
+    font-size: 2rem;
+}
+
+.taller-servicio-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-destacado);
+}
+
+.taller-servicio-card p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+/* --- CTA FINAL --- */
+.taller-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.2rem;
+    padding: var(--espaciado-2) 4rem;
+    margin: 0 auto;
+    max-width: 750px;
+    width: calc(100% - 12rem);
+    background-color: rgba(245, 197, 24, 0.04);
+    border: 1px solid rgba(245, 197, 24, 0.15);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.taller-cta h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-texto);
+}
+
+.taller-cta p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    max-width: 500px;
+}
+
+/* --- ANIMACIONES --- */
+.taller-anim-izquierda,
+.taller-anim-derecha,
+.taller-anim-abajo {
+    opacity: 0;
+}
+
+.taller-anim-izquierda {
+    animation: entrar-izquierda 1.1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.taller-anim-derecha {
+    animation: entrar-derecha 1.1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.taller-anim-abajo {
+    animation: entrar-abajo 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
 
 
 
