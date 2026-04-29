@@ -36,15 +36,7 @@
                                     <li><a href="/servicios/tienda.html">Tienda</a></li>
                                 </ul>
                         </li>
-                        <li class="menu-torneos">
-                            <a href="/torneos.html">Torneos</a>
-                            <ul class="torneos-desplegable">
-                                    <li><a href="/torneos/2023.html">2023</a></li>
-                                    <li><a href="/torneos/2024.html">2024</a></li>
-                                    <li><a href="/torneos/2025.html">2025</a></li>
-                                    <li><a href="/torneos/2026.html">2026</a></li>
-                                </ul>
-                        </li>
+                        <li><a href="/torneos.html">Torneos</a></li>
                         <li><a href="/galeria.html">Galería</a></li>
                         <li><a href="/conocenos.html">Conócenos</a></li>
                         <li><a href="/contacto.html">Contacto</a></li>
@@ -53,7 +45,25 @@
             </div>
         </header>
 
-            <!--CONOCENOS-->
+
+            <!-- HERO VIDEO -->
+        <section class="index-video-hero">
+            <div class="index-video-wrapper">
+                <video
+                    src="/assets/video/video.webm" autoplay muted loop playsinline class="index-video"></video>
+                <!--
+                <div class="index-video-overlay">
+                    <span class="index-video-categoria">BreakPoint</span>
+                    <h2 class="index-video-titulo">Encuentra tu punto.<br>Rompe la partida.</h2>
+                    <a href="/conocenos.html" class="boton-primario">Conócenos</a>
+                </div>
+                -->
+            </div>
+        </section>
+
+        <div class="divisor"></div>
+
+            <!-- CONOCENOS -->
         <section class="index-presentacion">
             <div class="index-presentacion-texto">
                 <h2>Sobre nosotros</h2>
@@ -64,46 +74,178 @@
                     Si quieres conocer esta historia, pincha <a href="/conocenos.html">aquí</a>.
                 </p>
             </div>
-            <div class="conocenos-imagen">
-                <img src="/assets/img/breakpoint/reakpoint (4).jpg" alt="Bolas de billar moviéndose después de el saque">
+            <div class="index-presentacion-img">
+                <img src="/assets/img/breakpoint/breakpoint (4).jpg" alt="Bolas de billar moviéndose después de el saque">
             </div>
         </section>
 
-        
 
     <div class="divisor"></div>    
 
-     <!-- 
-       FORMULARIO CONTACTO 
-    <div class="cont-contacto">    
-        <div>
-            <section id="contacto" class="contacto">
-                <h2 class="seccion-titulo">Contacta con nosotros</h2>
-                    <form class="formulario" action="#" method="post">
-                        <div class="campo">
-                            <label for="nombre">Nombre *</label>
-                            <input type="text" id="nombre" name="nombre" placeholder=""required/>
+            <!-- RESEÑAS -->
+        <section class="index-resenas">
+            <div class="index-resenas-cabecera">
+                <span class="taller-categoria">Comunidad · Google Reviews</span>
+                <h2>Lo que dicen nuestros clientes</h2>
+            </div>
+
+            <div class="index-resenas-track-outer">
+                <div class="index-resenas-track">
+
+                    <div class="index-resena-card">
+                        <div class="index-resena-header">
+                            <div class="index-resena-avatar">MG</div>
+                            <div>
+                                <p class="index-resena-nombre">Manuel G.</p>
+                                <div class="index-resena-estrellas">★★★★★</div>
+                            </div>
                         </div>
-                        <div class="campo">
-                            <label for="email">Correo electrónico *</label>
-                            <input type="email" id="email" name="email" placeholder="" required/>
+                        <p class="index-resena-texto">"Un club de billar de verdad. Las mesas están en perfecto estado y el ambiente es inmejorable. Desde que me hice socio vengo casi todos los fines de semana."</p>
+                    </div>
+
+                    <div class="index-resena-card">
+                        <div class="index-resena-header">
+                            <div class="index-resena-avatar">LF</div>
+                            <div>
+                                <p class="index-resena-nombre">Laura F.</p>
+                                <div class="index-resena-estrellas">★★★★★</div>
+                            </div>
                         </div>
-                        <div class="campo campo-ancho">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Introduce tu mensaje..."></textarea>
+                        <p class="index-resena-texto">"Las vistas desde la terraza son una pasada. Tomarte un café mirando a las Cíes entre partida y partida no tiene precio. Totalmente recomendable."</p>
+                    </div>
+
+                    <div class="index-resena-card">
+                        <div class="index-resena-header">
+                            <div class="index-resena-avatar">JR</div>
+                            <div>
+                                <p class="index-resena-nombre">Javier R.</p>
+                                <div class="index-resena-estrellas">★★★★★</div>
+                            </div>
                         </div>
-                        <button type="submit" class="boton boton-primario">Enviar mensaje</button>
-                    </form>
-            </section>
-        </div>     
-    </div>  
-      -->
+                        <p class="index-resena-texto">"Participé en el último torneo y la organización fue excelente. Trofeos bonitos, buen ambiente y nivel competitivo. Volveré seguro."</p>
+                    </div>
+
+                    <div class="index-resena-card">
+                        <div class="index-resena-header">
+                            <div class="index-resena-avatar">SR</div>
+                            <div>
+                                <p class="index-resena-nombre">Sofía R.</p>
+                                <div class="index-resena-estrellas">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="index-resena-texto">"Me llevé el taco a reparar al taller y quedó como nuevo. Precio justo y entrega rápida. El trato de Adrián es siempre cercano y profesional."</p>
+                    </div>
+
+                    <div class="index-resena-card">
+                        <div class="index-resena-header">
+                            <div class="index-resena-avatar">PC</div>
+                            <div>
+                                <p class="index-resena-nombre">Pablo C.</p>
+                                <div class="index-resena-estrellas">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="index-resena-texto">"Buscaba un sitio para practicar sin tener que compartir mesa con gente aleatoria. El plan socio lo resuelve todo. Reserva online, sin esperas."</p>
+                    </div>
+
+                    <div class="index-resena-card">
+                        <div class="index-resena-header">
+                            <div class="index-resena-avatar">AM</div>
+                            <div>
+                                <p class="index-resena-nombre">Ana M.</p>
+                                <div class="index-resena-estrellas">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="index-resena-texto">"Vine con mi pareja con el pack pareja y repetiremos sin duda. El local es precioso, moderno y acogedor a la vez. La terraza en verano es de otro nivel."</p>
+                    </div>
+
+                    <!-- CLONES para loop sin corte -->
+                    <div class="index-resena-card">
+                        <div class="index-resena-header">
+                            <div class="index-resena-avatar">MG</div>
+                            <div><p class="index-resena-nombre">Manuel G.</p><div class="index-resena-estrellas">★★★★★</div></div>
+                        </div>
+                        <p class="index-resena-texto">"Un club de billar de verdad. Las mesas están en perfecto estado y el ambiente es inmejorable. Desde que me hice socio vengo casi todos los fines de semana."</p>
+                    </div>
+                    <div class="index-resena-card">
+                        <div class="index-resena-header">
+                            <div class="index-resena-avatar">LF</div>
+                            <div><p class="index-resena-nombre">Laura F.</p><div class="index-resena-estrellas">★★★★★</div></div>
+                        </div>
+                        <p class="index-resena-texto">"Las vistas desde la terraza son una pasada. Tomarte un café mirando a las Cíes entre partida y partida no tiene precio. Totalmente recomendable."</p>
+                    </div>
+                    <div class="index-resena-card">
+                        <div class="index-resena-header">
+                            <div class="index-resena-avatar">JR</div>
+                            <div><p class="index-resena-nombre">Javier R.</p><div class="index-resena-estrellas">★★★★★</div></div>
+                        </div>
+                        <p class="index-resena-texto">"Participé en el último torneo y la organización fue excelente. Trofeos bonitos, buen ambiente y nivel competitivo. Volveré seguro."</p>
+                    </div>
+                    <div class="index-resena-card">
+                        <div class="index-resena-header">
+                            <div class="index-resena-avatar">SR</div>
+                            <div><p class="index-resena-nombre">Sofía R.</p><div class="index-resena-estrellas">★★★★★</div></div>
+                        </div>
+                        <p class="index-resena-texto">"Me llevé el taco a reparar al taller y quedó como nuevo. Precio justo y entrega rápida. El trato de Adrián es siempre cercano y profesional."</p>
+                    </div>
+                    <div class="index-resena-card">
+                        <div class="index-resena-header">
+                            <div class="index-resena-avatar">PC</div>
+                            <div><p class="index-resena-nombre">Pablo C.</p><div class="index-resena-estrellas">★★★★★</div></div>
+                        </div>
+                        <p class="index-resena-texto">"Buscaba un sitio para practicar sin tener que compartir mesa con gente aleatoria. El plan socio lo resuelve todo. Reserva online, sin esperas."</p>
+                    </div>
+                    <div class="index-resena-card">
+                        <div class="index-resena-header">
+                            <div class="index-resena-avatar">AM</div>
+                            <div><p class="index-resena-nombre">Ana M.</p><div class="index-resena-estrellas">★★★★★</div></div>
+                        </div>
+                        <p class="index-resena-texto">"Vine con mi pareja con el pack pareja y repetiremos sin duda. El local es precioso, moderno y acogedor a la vez. La terraza en verano es de otro nivel."</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="divisor"></div>
+
+            <!-- CALENDARIOS -->
+        <section class="index-calendarios">
+            <div class="index-cal-cabecera">
+                <span class="taller-categoria">Torneos · Calendarios</span>
+                <h2>Descarga el calendario en tu dispositivo</h2>
+                <p>Consulta todas las fechas y no te pierdas ningún torneo.</p>
+            </div>
+
+            <div class="index-cal-lista">
+
+                <a href="/assets/img/calendarios/calendario_circuito_gallego_absoluto.jpg" download class="index-cal-fila">
+                    <span class="index-cal-titulo">Circuito Gallego Absoluto</span>
+                    <span class="index-cal-dl">Descargar PDF →</span>
+                </a>
+
+                <a href="/assets/img/calendarios/calendario_circuito_gallego_femenino.jpg" download class="index-cal-fila">
+                    <span class="index-cal-titulo">Circuito Gallego Femenino</span>
+                    <span class="index-cal-dl">Descargar PDF →</span>
+                </a>
+
+                <a href="/assets/img/calendarios/calendario_circuíto_gallego_junior.jpg" download class="index-cal-fila">
+                    <span class="index-cal-titulo">Circuito Gallego Junior</span>
+                    <span class="index-cal-dl">Descargar PDF →</span>
+                </a>
+
+                <a href="/assets/img/calendarios/calendario_pool_2025-2026.jpg" download class="index-cal-fila index-cal-fila--activa">
+                    <span class="index-cal-titulo">Nacionales e Internacionales 25/26</span>
+                    <span class="index-cal-dl">Descargar PDF →</span>
+                </a>
+
+            </div>
+        </section>
+
+
     <div class="divisor"></div>    
 
 
             <!-- FOOTER -->
-                      <!--dejar el footer centrado en la vertical-->
-
         <footer class="footer">
             <div class="footer-content">
                 <div class="logo-footer">
@@ -127,6 +269,8 @@
                 </div>
             </div>
         </footer>
+
         <a href="#" class="flecha-arriba">&#10094;</a>
+
     </body>
 </html>
