@@ -1,7 +1,7 @@
 -- CONSULTAS - BreakPoint Club de Billar
 
 
-USE BreakPoint;
+USE breakpoint;
 
 
 -- 1. GESTIÓN DIARIA DE RECEPCIÓN
@@ -13,8 +13,7 @@ WHERE estado_mesa = 'disponible'
 ORDER BY id_mesa;
 
 -- 1.2) Reservas de hoy: quién viene, a qué mesa y en qué horario
-SELECT r.id_reserva,
-       u.nombre,
+SELECT u.nombre,
        u.apellidos,
        r.id_mesa,
        r.hora_inicio,
@@ -185,13 +184,13 @@ SELECT u.id_usuario,
        u.apellidos,
        u.email,
        u.telefono,
-       COUNT(r.id_reserva) AS total_reservas
+       COUNT(*) AS total_reservas
 FROM usuarios u
 JOIN reservas r ON r.id_usuario = u.id_usuario
 LEFT JOIN socios s ON s.id_usuario = u.id_usuario
 WHERE s.id_socio IS NULL
   AND r.estado_reserva IN ('completada','confirmada')
 GROUP BY u.id_usuario, u.nombre, u.apellidos, u.email, u.telefono
-HAVING COUNT(r.id_reserva) >= 5
+HAVING COUNT(*) >= 5
 ORDER BY total_reservas DESC;
 

@@ -1,7 +1,7 @@
 -- INSERCIÓN DE DATOS - BreakPoint Club de Billar - Datos simulados desde enero 2023 hasta abril 2026
 
 
-USE BreakPoint;
+USE breakpoint;
 
 -- USUARIOS (70 en total, 40 actuales + 30 históricos)
 INSERT INTO usuarios (nombre, apellidos, email, telefono, fecha_registro) VALUES
