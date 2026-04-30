@@ -41,33 +41,41 @@ Un club de billar real necesita una forma de darse a conocer, gestionar socios y
 ## Estructura del repositorio
 
 ```
-breakpoint/
-├── index.html
-├── conocenos.html
-├── torneos.html
-├── galeria.html
-├── contacto.html
-├── servicios/
-│   ├── socio.html
-│   ├── taller.html
-│   └── tienda.html
-├── css/
-│   └── style.css
-├── assets/
-│   ├── img/
-│   └── video/
+BreakPoint-Proyecto_Intermodular/
+├── diagrams/
+│   ├── Diagrama E-R.png
+│   └── Modelo relacional.png
+├── docs/
+│   ├── bbdd/
+│   │   └── README.md
+│   ├── general/
+│   │   ├── DefinicionProyecto.md
+│   │   ├── Flujo de trabajo.PNG
+│   │   └── Inicio del flujo de trabajo.PNG
+│   └── sistemas/
+│       └── informe_tecnico.md
 ├── sql/
 │   ├── create_tables.sql
 │   ├── insert_data.sql
 │   └── queries.sql
 ├── src/
-│   └── (aplicación Java con JDBC – en desarrollo)
-└── docs/
-    ├── sistemas/
-    │   └── informe_tecnico.md
-    └── diagramas/
-        ├── Diagrama_ER.png
-        └── Modelo_relacional.png
+│   └── (en desarrollo)
+├── web/
+│   ├── assets/
+│   │   ├── img/
+│   │   └── video/
+│   ├── css/
+│   │   └── style.css
+│   ├── servicios/
+│   │   ├── socio.html
+│   │   ├── taller.html
+│   │   └── tienda.html
+│   ├── conocenos.html
+│   ├── contacto.html
+│   ├── galeria.html
+│   ├── index.html
+│   └── torneos.html
+└── README.md
 ```
 
 ---
