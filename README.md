@@ -41,6 +41,7 @@ Un club de billar real necesita una forma de darse a conocer, gestionar socios y
 ## Estructura del repositorio
 
 ```
+
 BreakPoint-Proyecto_Intermodular/
 ├── diagrams/
 │   ├── Diagrama E-R.png
