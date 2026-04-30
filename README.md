@@ -1,130 +1,136 @@
-# BreakPoint — Club de Billar
-
-> Proyecto Intermodular de 1º de DAW · Prometeo by The Power 
-
----
+# BreakPoint – Portal Web del Club de Billar
 
 ## ¿Qué es este proyecto?
 
-**BreakPoint** es el portal web corporativo y sistema de gestión de un club privado de billar ficticio.
-El proyecto combina una web informativa con una aplicación de gestión interna, conectada a una base de datos real, para digitalizar el funcionamiento del club.
+BreakPoint es el portal web de un club de billar ficticio. La idea era crear una web completa para gestionar la presencia online del club, donde los usuarios puedan informarse de los servicios, apuntarse como socios, consultar torneos y contactar con el club.
 
-Este proyecto ha sido desarrollado como **Proyecto Intermodular de 1º de DAW**, integrando los conocimientos de los módulos de Bases de Datos, Programación (y MPO), Lenguaje de Marcas, Sistemas Informáticos y Entornos de Desarrollo.
-
----
-
-## La empresa ficticia
-
-**BreakPoint, Club de Billar** es un club privado que ofrece los siguientes servicios:
-
-- **Alquiler de mesas por horas** — reserva online con precios diferenciados para socios y no socios
-- **Torneos internos** — competiciones periódicas entre socios con historial de resultados
-- **Tienda de accesorios** — venta de material básico 
-- **Zona Chill out** - Espacio reservado para descanso entre sesiones o visualización de campeonatos oficiales en streaming.
-- **Taller de raparaciones** - Pequeño espacio reservado para reparaciones sencillas de los tacos o mantenimiento.
-
+Este portal web forma parte del Proyecto Intermodular de 1º de DAW, y conecta los módulos de Lenguajes de Marcas, Bases de Datos, Programación, Entornos de Desarrollo y Sistemas Informáticos.
 
 ---
 
 ## ¿Qué problema resuelve?
 
-Sin esta solución, el club gestionaría todo de forma manual: reservas por teléfono, apuntes en papel y sin control de disponibilidad de mesas. BreakPoint lo digitaliza:
-
-- Elimina la gestión en papel de socios y reservas
-- Evita conflictos de horario mostrando disponibilidad real de mesas
-- Centraliza la información de clientes, pagos y reservas en una base de datos
-- Da imagen profesional al club
+Un club de billar real necesita una forma de darse a conocer, gestionar socios y organizar torneos. Hasta ahora todo eso se hacía de forma manual (llamadas, papel, boca a boca). Esta web centraliza esa información y sienta las bases para una futura gestión digital de reservas y socios.
 
 ---
 
-## A quién va dirigido
+## Tecnologías usadas
 
-| Perfil | Uso |
-|---|---|
-| **Socios actuales** | Consultar su información, reservar mesas sin coste y acceso a torneos |
-| **Nuevos clientes** | Conocer el club, tarifas y hacerse socios |
-| **Personal del club** | Gestionar altas, reservas y ventas |
+- **HTML5** y **CSS3** para la maquetación y diseño del portal
+- **XAMPP** (Apache + MariaDB + phpMyAdmin) para el servidor local y la base de datos del club
+- **Java** con **JDBC** para la aplicación de gestión (en desarrollo)
+- **Git / GitHub** para el control de versiones
 
 ---
 
-## Tecnologías utilizadas
+## Páginas del portal
 
-| Tecnología | Uso |
-|---|---|
-| **HTML5 + CSS3** | Portal web corporativo |
-| **Java** | Aplicación de gestión interna |
-| **JDBC** | Conexión de la aplicación con la base de datos |
-| **MySQL** | Base de datos relacional |
-| **Git + GitHub** | Control de versiones y entrega del proyecto |
+| Página | Descripción |
+|--------|-------------|
+| `index.html` | Página principal |
+| `conocenos.html` | Historia del club |
+| `torneos.html` | Información sobre torneos activos y pasados |
+| `galeria.html` | Galería de imágenes del equipo, torneos y ambiente |
+| `contacto.html` | Formulario de contacto y ubicación |
+| `servicios/socio.html` | Información para hacerse socio |
+| `servicios/taller.html` | Servicio de taller de reparaciones |
+| `servicios/tienda.html` | Tienda de material de billar |
 
 ---
 
 ## Estructura del repositorio
 
 ```
-breakpoint-club/
-│
-├── web/                  → Portal web (HTML + CSS)
-│   ├── index.html
-│   ├── css/
-│   └── assets/
-│
-├── src/                  → Código fuente Java
-│   └── ...
-│
-├── sql/                  → Scripts de base de datos
+breakpoint/
+├── index.html
+├── conocenos.html
+├── torneos.html
+├── galeria.html
+├── contacto.html
+├── servicios/
+│   ├── socio.html
+│   ├── taller.html
+│   └── tienda.html
+├── css/
+│   └── style.css
+├── assets/
+│   ├── img/
+│   └── video/
+├── sql/
 │   ├── create_tables.sql
 │   ├── insert_data.sql
 │   └── queries.sql
-│
-├── docs/                 → Documentación del proyecto
-│   ├── sistemas/         → Informe técnico (Sistemas Informáticos)
-│   ├── diagrams/         → Diagrama E/R y modelo relacional
-│	├── bbdd
-│
-└── README.md
+├── src/
+│   └── (aplicación Java con JDBC – en desarrollo)
+└── docs/
+    ├── sistemas/
+    │   └── informe_tecnico.md
+    └── diagramas/
+        ├── Diagrama_ER.png
+        └── Modelo_relacional.png
 ```
 
 ---
 
-## Cómo ejecutar el proyecto
+## Base de datos
 
-### Portal web
-Abrir el archivo `web/index.html` directamente en cualquier navegador. No requiere servidor.
+La base de datos se llama `breakpoint` y gestiona las siguientes entidades:
 
-### Aplicación Java
+- **usuarios** – personas registradas en el club
+- **socios** – usuarios que tienen membresía activa
+- **cuotas_socios** – control de pagos mensuales
+- **mesas** – mesas de billar disponibles
+- **reservas** – reservas de mesas por usuarios/socios
+- **torneos** – torneos organizados por el club
+- **inscripciones** – participación de socios en torneos
+
+Los archivos SQL para la creación de la base de datos, inserción de datos y consultas de ejemplo, están en la carpeta `/sql/`.
+
+---
+
+## Instrucciones de instalación
+
+### Web (HTML + CSS)
+
+No requiere instalación. Se puede abrir directamente en el navegador o desplegar en cualquier servidor web estático.
+
+Con VS Code y la extensión Live Server:
+1. Abrir la carpeta del proyecto
+2. Click derecho sobre `index.html` → "Open with Live Server"
+
+### Base de datos
+
+Requisitos: XAMPP instalado y en ejecución (módulos Apache y MySQL en estado "Running").
+
+1. Abrir el panel de control de XAMPP y arrancar Apache y MySQL
+2. Acceder a `http://localhost/phpmyadmin` desde el navegador
+3. En la pestaña **SQL**, pegar el contenido de `sql/create_tables.sql` y ejecutarlo
+4. Repetir con `sql/insert_data.sql` para cargar los datos de prueba
+
+O bien desde la consola de XAMPP (Shell):
+
 ```bash
-# Requisitos: Java 17+, MySQL 8+
-# 1. Importar la base de datos
-mysql -u root -p < sql/create_tables.sql
-mysql -u root -p < sql/insert_data.sql
-
-# 2. Configurar la conexión en src/config/DBConnection.java
-# 3. Compilar y ejecutar desde el IDE (IntelliJ IDEA o Eclipse)
+mysql -u root breakpoint < sql/create_tables.sql
+mysql -u root breakpoint < sql/insert_data.sql
 ```
+
+### Aplicación Java (en desarrollo)
+
+> Pendiente de implementación. Se añadirá cuando esté lista la parte de programación con JDBC.
 
 ---
 
-## Módulos del proyecto
+## Estado del proyecto
 
-| Módulo | Entregable |
-|---|---|
-| **Bases de Datos (0484)** | Diagrama E/R, modelo relacional, scripts SQL, consultas |
-| **Entornos de Desarrollo (0487)** | Repositorio GitHub, commits, README |
-| **Lenguajes de Marcas (0373)** | Portal web en HTML + CSS |
-| **Programación (0485)** | Aplicación Java con JDBC y operaciones CRUD |
-| **Sistemas Informáticos (0483)** | Informe técnico del entorno de ejecución |
-| **MPO Ampliación de Programación** | Diseño POO, arquitectura por capas, mejora estructural |
+- [x] Diseño y maquetación web (HTML + CSS)
+- [x] Base de datos diseñada y creada
+- [x] Datos de prueba insertados
+- [x] Consultas SQL funcionales
+- [ ] Aplicación Java con JDBC (en desarrollo)
 
 ---
 
 ## Autor
 
-**[Yago Montenegro Díaz-Flores]**  
-Estudiante de 1º de DAW · Prometeo by The Power  
-[https://github.com/YagoMontenegro/BreakPoint-Proyecto_Intermodular]
-
----
-
-*Proyecto desarrollado entre abril y mayo de 2026.*
-
+Proyecto desarrollado como trabajo de fin de módulo – 1º DAW  
+Curso 2024/2025
