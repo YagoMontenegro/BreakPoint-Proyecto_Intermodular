@@ -1,46 +1,134 @@
-BreakPoint — Club de Billar
-    Proyecto Intermodular de 1º de DAW. Basado en una empresa ficticia de un club de billar privado llamado BreakPoint.
+# BreakPoint — Definición del Proyecto
+### Proyecto Intermodular · 1º DAW · Curso 2024/2025
 
-    Para que sirve la web:
-        Es el portal oficial del club, y cumple dos funciones principales:
+---
 
-            Cara pública: Presenta el club, sus instalaciones, tarifas, horarios, tienda de productos y noticias sobre torneos internos.
-            Gestión interna: Permite a los socios registrarse, hacer reservas de mesas online y anotarse a los torneos. Al personal del club le permite gestionar de forma automatizada esas reservas, el alta de nuevos socios y las plazas destinadas a los torneos internos. 
+## 1. ¿Qué es BreakPoint?
 
-    A quien va dirigida:
-            Socios actuales que quieren reservar una mesa o acceso al torneo y consultar su información.
-            Nuevos clientes que quieren conocer el club, ver tarifas y hacerse socios.
-            El personal del club que necesita gestionar el día a día (altas, reservas, inscripciones a torneos...).
+Portal web y sistema de gestion de un club de billar privado ficticio. Parte del proyecto intermodular de 1ª de DAW.
 
-    Servicios que ofrece:
-        - Alquiler de mesas
-            Los clientes pueden reservar mesas por tramos de tiempo. Los socios tienen acceso gratuito a las mesas con previa reserva, los no socios tienen un coste €/h.
+---
 
-        - Alta como socio
-            Ofrece beneficios como acceso preferente a las mesas reservadas y torneos. Así como descuentos exclusivos en la tienda.
+## 2. ¿Para qué sirve la web?
 
-        - Torneos internos
-            El club organiza torneos periódicos entre socios, con modalidad, fecha, participantes e historial de resultados. Dependiendo del torneo así como de la participación, los premios variarán en función de lo que decida la directiva.
+El portal cumple dos funciones diferenciadas:
 
-        - Tienda física de accesorios
-            Venta de material básico para jugadores (los socios pueden acceder a ofertas o descuentos si los hubiere):
-            - Guantes
-            - Tizas y portatizas
-            - Suelas para tacos
-            - Productos de mantenimiento de tacos (limpiadores, aceites, extensores...)
+**Cara pública:** Presenta el club, sus instalaciones y servicios al exterior. Cualquier persona puede consultar las tarifas, conocer la historia del club, ver la galería de imágenes, informarse sobre torneos activos y ponerse en contacto. Es la forma de darse a conocer frente a posibles nuevos socios y clientes.
 
-        - Zona de descanso y multimedia
-            Espacio reservado para descansar entre sesiones o visualizar retansmisiones en vivo de los campeonatos oficiales que normalmente requieren de una suscripción a una plataforma de streaming.
+**Gestión interna:** A través del portal, los socios pueden hacer reservas de mesas, inscribirse en torneos y consultar su información. El personal del club puede gestionar de forma digitalizada las altas de socios, el control de reservas y las plazas de torneos. Esta parte está conectada a una base de datos y, en su versión completa, se gestiona desde una aplicación Java que se desarrolla en el módulo de Programación.
 
-        - Taller de reparaciones
-            Pequeño espacio reservado para reparaciones sencillas de los tacos o mantenimiento. Accesible por cualquier usuario, socio, no socio o externo al club.
+---
 
-        
-    ¿Qué problema resuelve?
-        Sin esta solución, el club gestionaría todo a mano: llamadas por teléfono para reservas, apuntes en papel, sin control de qué mesas están libres ni quién es socio. 
+## 3. ¿A quién va dirigida?
 
-        BreakPoint lo digitaliza todo:
-            - Elimina la gestión en papel de socios, reservas y torneos
-            - Evita conflictos de horario mostrando disponibilidad real de mesas
-            - Centraliza la información de clientes, pagos y reservas en una base de datos
-            - Da imagen profesional al club frente a competidores
+El portal tiene tres tipos de usuarios con necesidades distintas:
+
+**Socios activos:** Personas que ya son miembros del club y quieren reservar una mesa, apuntarse a un torneo o consultar su información personal.
+
+**Nuevos clientes:** Personas que no conocen el club, quieren informarse sobre qué ofrece, ver las tarifas de membresía y decidir si hacerse socios.
+
+**Personal del club:** El equipo de BreakPoint, que necesita gestionar el día a día: altas de nuevos socios, control de reservas, inscripciones a torneos y seguimiento de pagos.
+
+---
+
+## 4. Servicios que ofrece el club
+
+### Membresía de socio
+
+Los socios tienen acceso preferente a las mesas sin coste por sesión, pueden participar en los torneos internos del club y disfrutan de descuentos en la tienda y en el taller de reparaciones.
+
+Existen tres modalidades de pago individual:
+
+| Plan | Precio |
+|---|---|
+| Mensual | 30 €/mes |
+| Semestral | 27 €/mes |
+| Anual | 24 €/mes |
+
+Además hay packs especiales para grupos:
+
+- **Pack Pareja:** dos miembros con precio conjunto
+- **Pack Familia:** hasta 4 miembros con descuentos progresivos
+
+### Alquiler de mesas
+
+Las mesas pueden reservarse por tramos de tiempo. Los socios tienen acceso incluido en su cuota. Los no socios pagan 6 €/hora. Las reservas se gestionan de forma online a través del portal.
+
+### Torneos internos
+
+El club organiza torneos periódicos entre socios con modalidades, fechas, número de participantes e historial de resultados. Los premios varían en función del torneo y la participación, y los decide la directiva. En la web se pueden consultar los torneos activos y descargar los calendarios oficiales de competición (Circuito Gallego Absoluto, Femenino, Junior y Nacionales e Internacionales 25/26).
+
+### Taller de reparaciones
+
+Espacio de reparación y mantenimiento de tacos gestionado en colaboración con **Senshi Cues**, empresa especializada en fabricación y reparación de tacos de alta gama. Los socios de BreakPoint tienen acceso preferente al servicio técnico con tiempos de entrega reducidos y tarifas exclusivas.
+
+Los servicios del taller incluyen: cambio de suela, reparación de virola, restauración de madera, ajuste de roscas y alineación, pulido y lacado, y diagnóstico gratuito previo a cualquier intervención.
+
+El taller es accesible para cualquier usuario: socios, no socios y clientes externos al club.
+
+### Tienda de accesorios
+
+Venta de todo tipo de material necesario para los jugadores con descuentos para socios.
+
+
+### Terraza
+
+Terraza con vistas únicas a las Islas Cíes y un ambiente espectacular(especialmente en verano).
+
+---
+
+## 5. ¿Qué problema resuelve?
+
+Sin este sistema, BreakPoint gestionaría todo de forma manual: llamadas por teléfono para reservas, listas en papel, sin control en tiempo real de qué mesas están libres ni quién tiene la cuota al día.
+
+El portal y su base de datos digitalizan toda esa gestión:
+
+- Elimina el papel en la gestión de socios, reservas y torneos
+- Evita conflictos de horario mostrando la disponibilidad real de las mesas
+- Centraliza la información de clientes, pagos y reservas en una base de datos estructurada
+- Permite al personal del club acceder a la información desde cualquier dispositivo
+- Da al club una imagen profesional y moderna, acorde a su ubicación y filosofía
+
+---
+
+## 6. Tecnologías del proyecto
+
+| Módulo | Tecnología | Uso |
+|---|---|---|
+| Lenguajes de Marcas | HTML5 + CSS3 | Maquetación y diseño del portal |
+| Bases de Datos | MariaDB (via XAMPP) | Almacenamiento y gestión de datos |
+| Programación | Java + JDBC | Aplicación de gestión interna (en desarrollo) |
+| Entornos de Desarrollo | Git / GitHub | Control de versiones del proyecto |
+| Sistemas Informáticos | XAMPP | Servidor local de desarrollo |
+
+---
+
+## 7. Estructura del portal web
+
+| Página | Ruta | Contenido |
+|---|---|---|
+| Inicio | `index.html` | Presentación del club, reseñas y calendarios de torneos |
+| Conócenos | `conocenos.html` | Historia del fundador, origen del nombre y descripción del local |
+| Hazte socio | `servicios/socio.html` | Planes de membresía y packs especiales |
+| Taller | `servicios/taller.html` | Servicios del taller y colaboración con Senshi Cues |
+| Tienda | `servicios/tienda.html` | Catálogo de productos de la tienda presencial |
+| Torneos | `torneos.html` | Torneos activos e historial con fotos |
+| Galería | `galeria.html` | Imágenes del local, torneos y ambiente |
+| Contacto | `contacto.html` | Horario, redes sociales, ubicación y formulario de contacto |
+
+---
+
+## 8. Módulos del Proyecto Intermodular que cubre
+
+| Módulo | Código | Entregable principal |
+|---|---|---|
+| Lenguajes de Marcas | 0373 | Portal web completo (HTML + CSS) |
+| Bases de Datos | 0484 | BD `breakpoint` + scripts SQL + documentación |
+| Programación | 0485 | Aplicación Java con JDBC (en desarrollo) |
+| Entornos de Desarrollo | 0487 | Repositorio GitHub con historial de commits y README |
+| Sistemas Informáticos | 0483 | Informe técnico del entorno de ejecución y capturas de pantalla |
+
+---
+
+*Documento ubicado en `docs/general/DefinicionProyecto.md`*  
+*Proyecto Intermodular – 1º DAW – Curso 2024/2025*
