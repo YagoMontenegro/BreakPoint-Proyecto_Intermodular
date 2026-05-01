@@ -9,12 +9,14 @@ public class GestionAppController {
     private MenuPrincipalView menuPrincipalView;
     private UsuarioController usuarioController;
     private SocioController socioController;
+    private CuotaSocioController cuotaSocioController;
 
     public GestionAppController() {
         this.scanner = new Scanner(System.in);
         this.menuPrincipalView = new MenuPrincipalView();
         this.usuarioController = new UsuarioController(scanner);
         this.socioController = new SocioController(scanner);
+        this.cuotaSocioController = new CuotaSocioController(scanner);
     }
 
     public void iniciarAplicacion() {
@@ -30,7 +32,7 @@ public class GestionAppController {
                 switch (opcion) {
                     case 1 -> usuarioController.iniciarMenuUsuario();
                     case 2 -> socioController.iniciarMenuSocio();
-                    case 3 -> System.out.println("Módulo de cuotas no implementado aún.");
+                    case 3 -> cuotaSocioController.iniciarMenuCuota();
                     case 4 -> System.out.println("Módulo de mesas no implementado aún.");
                     case 5 -> System.out.println("Módulo de reservas no implementado aún.");
                     case 6 -> System.out.println("Módulo de torneos no implementado aún.");
