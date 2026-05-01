@@ -23,7 +23,7 @@ public class Inscripcion {
     public String toString() {
         return  "\n--- INSCRIPCIÓN ---" +
                 "\nID Socio: " + socio.getIdSocio() +
-                "\nNombre socio: " + socio.getUsuario().getNombre() + " " + socio.getUsuario().getApellidos() +
+                "\nNombre socio: " + socio.getNombre() + " " + socio.getApellidos() +
                 "\nID Torneo: " + torneo.getIdTorneo() +
                 "\nTorneo: " + torneo.getNombre() +
                 "\nFecha de inscripción: " + fechaInscripcion +

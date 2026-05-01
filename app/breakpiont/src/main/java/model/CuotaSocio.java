@@ -30,7 +30,7 @@ public class CuotaSocio {
         return  "\n--- CUOTA DE SOCIO ---" +
                 "\nID Cuota: " + idCuota +
                 "\nID Socio: " + socio.getIdSocio() +
-                "\nNombre socio: " + socio.getUsuario().getNombre() + " " + socio.getUsuario().getApellidos() +
+                "\nNombre socio: " + socio.getNombre() + " " + socio.getApellidos() +
                 "\nFecha de pago: " + (fechaPago != null ? fechaPago : "Pendiente de pago") +
                 "\nMes: " + mes +
                 "\nAño: " + anio +
