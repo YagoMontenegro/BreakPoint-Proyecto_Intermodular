@@ -7,19 +7,13 @@ import java.util.Scanner;
 public class GestionAppController {
     private Scanner scanner;
     private MenuPrincipalView menuPrincipalView;
-    private UsuarioController usuarioController;
-    private SocioController socioController;
-    private CuotaSocioController cuotaSocioController;
 
     public GestionAppController() {
         this.scanner = new Scanner(System.in);
         this.menuPrincipalView = new MenuPrincipalView();
-        this.usuarioController = new UsuarioController(scanner);
-        this.socioController = new SocioController(scanner);
-        this.cuotaSocioController = new CuotaSocioController(scanner);
     }
 
-    public void iniciarAplicacion() {
+    public void iniciar() {
         int opcion = -1;
 
         do {
@@ -30,14 +24,14 @@ public class GestionAppController {
                 scanner.nextLine();
 
                 switch (opcion) {
-                    case 1 -> usuarioController.iniciarMenuUsuario();
-                    case 2 -> socioController.iniciarMenuSocio();
-                    case 3 -> cuotaSocioController.iniciarMenuCuota();
-                    case 4 -> System.out.println("Módulo de mesas no implementado aún.");
-                    case 5 -> System.out.println("Módulo de reservas no implementado aún.");
-                    case 6 -> System.out.println("Módulo de torneos no implementado aún.");
-                    case 7 -> System.out.println("Módulo de inscripciones no implementado aún.");
-                    case 0 -> System.out.println("Saliendo de la aplicación. ¡Hasta pronto!");
+                    case 1 -> new UsuarioController(scanner).iniciarMenuUsuario();
+                    case 2 -> new SocioController(scanner).iniciarMenuSocio();
+                    case 3 -> new CuotaSocioController(scanner).iniciarMenuCuota();
+                    case 4 -> new MesaController(scanner).iniciarMenuMesa();
+                    case 5 -> new ReservaController(scanner).iniciarMenuReserva();
+                    case 6 -> new TorneoController(scanner).iniciarMenuTorneo();
+                    case 7 -> new InscripcionController(scanner).iniciarMenuInscripcion();
+                    case 0 -> System.out.println("¡Hasta luego!");
                     default -> System.out.println("Opción no válida.");
                 }
             } else {
