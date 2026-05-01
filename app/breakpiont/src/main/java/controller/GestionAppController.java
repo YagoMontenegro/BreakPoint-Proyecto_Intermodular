@@ -28,7 +28,7 @@ public class GestionAppController {
                     case 2 -> new SocioController(scanner).iniciarMenuSocio();
                     case 3 -> new CuotaSocioController(scanner).iniciarMenuCuota();
                     case 4 -> new MesaController(scanner).iniciarMenuMesa();
-                    //case 5 -> new ReservaController(scanner).iniciarMenuReserva();
+                    case 5 -> new ReservaController(scanner).iniciarMenuReserva();
                     case 6 -> new TorneoController(scanner).iniciarMenuTorneo();
                     case 7 -> new InscripcionController(scanner).iniciarMenuInscripcion();
                     case 0 -> System.out.println("¡Hasta luego!");
