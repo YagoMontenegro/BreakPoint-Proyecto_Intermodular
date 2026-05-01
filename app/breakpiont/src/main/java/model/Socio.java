@@ -2,9 +2,8 @@ package model;
 
 import java.time.LocalDateTime;
 
-public class Socio {
+public class Socio extends Usuario {
     private int idSocio;
-    private Usuario usuario;
     private LocalDateTime fechaAlta;
     private LocalDateTime fechaBaja;
     private String estadoSocio;
@@ -13,9 +12,10 @@ public class Socio {
 
     }
 
-    public Socio(int idSocio, Usuario usuario, LocalDateTime fechaAlta, LocalDateTime fechaBaja, String estadoSocio) {
+    public Socio(int idSocio, int idUsuario, String nombre, String apellidos, String email, String telefono,
+                 LocalDateTime fechaRegistro, LocalDateTime fechaAlta, LocalDateTime fechaBaja, String estadoSocio) {
+        super(idUsuario, nombre, apellidos, email, telefono, fechaRegistro);
         this.idSocio = idSocio;
-        this.usuario = usuario;
         this.fechaAlta = fechaAlta;
         this.fechaBaja = fechaBaja;
         this.estadoSocio = estadoSocio;
@@ -25,8 +25,10 @@ public class Socio {
     public String toString() {
         return  "\n--- SOCIO ---" +
                 "\nID Socio: " + idSocio +
-                "\nID Usuario: " + usuario.getIdUsuario() +
-                "\nNombre: " + usuario.getNombre() + " " + usuario.getApellidos() +
+                "\nID Usuario: " + getIdUsuario() +
+                "\nNombre: " + getNombre() + " " + getApellidos() +
+                "\nEmail: " + getEmail() +
+                "\nTeléfono: " + getTelefono() +
                 "\nFecha de alta: " + fechaAlta +
                 "\nFecha de baja: " + (fechaBaja != null ? fechaBaja : "Activo") +
                 "\nEstado: " + estadoSocio;
@@ -38,14 +40,6 @@ public class Socio {
 
     public void setIdSocio(int idSocio) {
         this.idSocio = idSocio;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
     }
 
     public LocalDateTime getFechaAlta() {
