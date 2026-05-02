@@ -50,7 +50,7 @@ create table cuotas_socios (
 create table torneos (
     id_torneo int auto_increment primary key,
     nombre varchar(100) not null,
-    modalidad enum ('bola_8','bola_9','bola_10') null,
+    modalidad enum ('bola_8','bola_9','bola_10') not null,
     fecha_inicio datetime not null,
     fecha_fin datetime null,
         -- la fecha_fin es null hasta que finaliza el torneo
