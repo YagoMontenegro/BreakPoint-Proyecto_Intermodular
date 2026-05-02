@@ -55,7 +55,16 @@ public class UsuarioController {
         String nombre = leerTexto("Nombre: ");
         String apellidos = leerTexto("Apellidos: ");
         String email = leerTexto("Email: ");
+        if (!esEmailValido(email)) {
+            System.out.println("Formato de email no válido. Ejemplo: usuario@correo.com");
+            return;
+        }
+
         String telefono = leerTexto("Teléfono: ");
+        if (!esTelefonoValido(telefono)) {
+            System.out.println("Formato de teléfono no válido. Debe contener entre 9 y 15 dígitos.");
+            return;
+        }
 
         Usuario usuario = new Usuario(
                 0,
@@ -120,8 +129,19 @@ public class UsuarioController {
             if (usuario != null) {
                 usuario.setNombre(leerTexto("Nuevo nombre: "));
                 usuario.setApellidos(leerTexto("Nuevos apellidos: "));
-                usuario.setEmail(leerTexto("Nuevo email: "));
-                usuario.setTelefono(leerTexto("Nuevo teléfono: "));
+                String nuevoEmail = leerTexto("Nuevo email: ");
+                if (!esEmailValido(nuevoEmail)) {
+                    System.out.println("Formato de email no válido. Ejemplo: usuario@correo.com");
+                    return;
+                }
+                usuario.setEmail(nuevoEmail);
+
+                String nuevoTelefono = leerTexto("Nuevo teléfono: ");
+                if (!esTelefonoValido(nuevoTelefono)) {
+                    System.out.println("Formato de teléfono no válido. Debe contener entre 9 y 15 dígitos.");
+                    return;
+                }
+                usuario.setTelefono(nuevoTelefono);
 
                 int filasActualizadas = usuarioDAO.actualizarUsuario(usuario);
 
@@ -176,4 +196,12 @@ public class UsuarioController {
         } while (texto.isEmpty());
         return texto;
     }
+    private boolean esEmailValido(String email) {
+        return email != null && email.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
+    }
+
+    private boolean esTelefonoValido(String telefono) {
+        return telefono != null && telefono.matches("^\\+?\\d{9,15}$");
+    }
+
 }

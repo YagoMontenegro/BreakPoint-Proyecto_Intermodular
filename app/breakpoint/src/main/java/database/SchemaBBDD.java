@@ -37,6 +37,7 @@ public interface SchemaBBDD {
     // TABLA TORNEOS
     String TAB_TORNEO = "torneos";
     String COL_ID_TORNEO = "id_torneo";
+    String COL_NOMBRE_TORNEO = "nombre";
     String COL_MODALIDAD = "modalidad";
     String COL_FECHA_INICIO = "fecha_inicio";
     String COL_FECHA_FIN = "fecha_fin";

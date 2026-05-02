@@ -60,7 +60,7 @@ public class InscripcionDAO {
                 SchemaBBDD.COL_EMAIL,
                 SchemaBBDD.COL_TELEFONO,
                 SchemaBBDD.COL_ID_TORNEO,
-                "nombre",
+                SchemaBBDD.COL_NOMBRE_TORNEO,
                 SchemaBBDD.COL_MODALIDAD,
                 SchemaBBDD.COL_FECHA_INICIO,
                 SchemaBBDD.COL_FECHA_FIN,
@@ -110,7 +110,7 @@ public class InscripcionDAO {
                 SchemaBBDD.COL_EMAIL,
                 SchemaBBDD.COL_TELEFONO,
                 SchemaBBDD.COL_ID_TORNEO,
-                "nombre",
+                SchemaBBDD.COL_NOMBRE_TORNEO,
                 SchemaBBDD.COL_MODALIDAD,
                 SchemaBBDD.COL_FECHA_INICIO,
                 SchemaBBDD.COL_FECHA_FIN,
@@ -221,7 +221,7 @@ public class InscripcionDAO {
 
         Torneo torneo = new Torneo();
         torneo.setIdTorneo(rs.getInt(SchemaBBDD.COL_ID_TORNEO));
-        torneo.setNombre(rs.getString("nombre"));
+        torneo.setNombre(rs.getString(SchemaBBDD.COL_NOMBRE_TORNEO));
         torneo.setModalidad(rs.getString(SchemaBBDD.COL_MODALIDAD));
         torneo.setFechaInicio(rs.getTimestamp(SchemaBBDD.COL_FECHA_INICIO).toLocalDateTime());
         if (rs.getTimestamp(SchemaBBDD.COL_FECHA_FIN) != null) {

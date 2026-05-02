@@ -25,7 +25,7 @@ public class TorneoDAO {
         String query = String.format(
                 "INSERT INTO %s (%s, %s, %s, %s, %s, %s) VALUES (?,?,?,?,?,?)",
                 SchemaBBDD.TAB_TORNEO,
-                SchemaBBDD.COL_NOMBRE,
+                SchemaBBDD.COL_NOMBRE_TORNEO,
                 SchemaBBDD.COL_MODALIDAD,
                 SchemaBBDD.COL_FECHA_INICIO,
                 SchemaBBDD.COL_FECHA_FIN,
@@ -58,7 +58,7 @@ public class TorneoDAO {
             while (resultSet.next()) {
                 Torneo torneo = new Torneo(
                         resultSet.getInt(SchemaBBDD.COL_ID_TORNEO),
-                        resultSet.getString(SchemaBBDD.COL_NOMBRE),
+                        resultSet.getString(SchemaBBDD.COL_NOMBRE_TORNEO),
                         resultSet.getString(SchemaBBDD.COL_MODALIDAD),
                         resultSet.getTimestamp(SchemaBBDD.COL_FECHA_INICIO).toLocalDateTime(),
                         resultSet.getTimestamp(SchemaBBDD.COL_FECHA_FIN) != null
@@ -88,7 +88,7 @@ public class TorneoDAO {
             if (resultSet.next()) {
                 return new Torneo(
                         resultSet.getInt(SchemaBBDD.COL_ID_TORNEO),
-                        resultSet.getString(SchemaBBDD.COL_NOMBRE),
+                        resultSet.getString(SchemaBBDD.COL_NOMBRE_TORNEO),
                         resultSet.getString(SchemaBBDD.COL_MODALIDAD),
                         resultSet.getTimestamp(SchemaBBDD.COL_FECHA_INICIO).toLocalDateTime(),
                         resultSet.getTimestamp(SchemaBBDD.COL_FECHA_FIN) != null
@@ -110,7 +110,7 @@ public class TorneoDAO {
         String query = String.format(
                 "UPDATE %s SET %s = ?, %s = ?, %s = ?, %s = ?, %s = ?, %s = ?, %s = ? WHERE %s = ?",
                 SchemaBBDD.TAB_TORNEO,
-                SchemaBBDD.COL_NOMBRE,
+                SchemaBBDD.COL_NOMBRE_TORNEO,
                 SchemaBBDD.COL_MODALIDAD,
                 SchemaBBDD.COL_FECHA_INICIO,
                 SchemaBBDD.COL_FECHA_FIN,
