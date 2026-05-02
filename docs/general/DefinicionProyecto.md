@@ -133,5 +133,8 @@ El portal y su base de datos digitalizan toda esa gestión:
 
 ---
 
-*Documento ubicado en `docs/general/DefinicionProyecto.md`*  
-*Proyecto Intermodular – 1º DAW – Curso 2024/2025*
+## Autor
+
+    Yago Montenegro Díaz-Flores
+Proyecto desarrollado como trabajo de fin de curso 2025/2026 – 1º DAW  
+

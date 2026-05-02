@@ -231,5 +231,5 @@ Requisitos: JDK 17 o superior y Maven instalados. XAMPP con MySQL en ejecución 
 
 ## Autor
 
-Proyecto desarrollado como trabajo de fin de módulo – 1º DAW  
-Curso 2024/2025
+    Yago Montenegro Díaz-Flores
+Proyecto desarrollado como trabajo de fin de curso 2025/2026 – 1º DAW  

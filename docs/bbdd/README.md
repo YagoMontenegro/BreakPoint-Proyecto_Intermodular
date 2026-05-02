@@ -189,4 +189,9 @@ La aplicación Java conecta ambas partes: lee y escribe en esta base de datos me
 
 ---
 
-*Módulo Bases de Datos (0484) – Proyecto Intermodular – 1º DAW – Curso 2024/2025*
+## Autor
+
+    Yago Montenegro Díaz-Flores
+Proyecto desarrollado como trabajo de fin de curso 2025/2026 – 1º DAW  
+
+*Módulo Bases de Datos (0484) *

@@ -235,5 +235,9 @@ Las evidencias incluyen:
 
 ---
 
-*Informe elaborado para el módulo Sistemas Informáticos (0483) – 1º DAW*  
-*Proyecto Intermodular – Curso 2024/2025*
+## Autor
+
+    Yago Montenegro Díaz-Flores
+Proyecto desarrollado como trabajo de fin de curso 2025/2026 – 1º DAW  
+
+*Módulo Bases de Datos (0483) *
