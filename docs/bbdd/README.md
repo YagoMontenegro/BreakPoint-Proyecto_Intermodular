@@ -9,7 +9,7 @@ BreakPoint es un club de billar ficticio que necesita gestionar toda su activida
 
 El objetivo de esta base de datos es modelar exactamente eso: quién es quién, qué hace cada uno, y cómo se relacionan todas las partes del negocio entre sí.
 
-La base de datos está diseñada para que, en el futuro, una aplicación Java pueda conectarse a ella y gestionarla (esa parte está en el módulo de Programación). Aquí nos centramos en que la estructura sea correcta y tenga sentido real.
+La base de datos está conectada a una aplicación Java mediante JDBC (desarrollada en el módulo de Programación) que permite gestionar todas las entidades de forma interactiva. Aquí nos centramos en que la estructura sea correcta y tenga sentido real.
 
 ---
 
@@ -185,7 +185,7 @@ Las consultas están en `sql/queries.sql` y están agrupadas por categoría:
 
 La base de datos y el portal web están diseñados para representar el mismo negocio. El portal muestra la información pública del club (torneos disponibles, cómo hacerse socio, la tienda, el taller, etc..) y la base de datos gestiona lo que ocurre internamente: quién es socio, qué mesas hay reservadas, qué torneos están activos...
 
-Aunque no están conectados técnicamente (eso lo hará la aplicación Java del módulo de Programación), conceptualmente son coherentes. Un usuario que vea la página de torneos en la web y quiera apuntarse, es el mismo tipo de entidad que existe en la tabla `usuarios` de la base de datos.
+La aplicación Java conecta ambas partes: lee y escribe en esta base de datos mediante JDBC, permitiendo al personal del club gestionar usuarios, socios, cuotas, mesas, reservas, torneos e inscripciones desde una interfaz de consola. Un usuario que vea la página de torneos en la web y quiera apuntarse, es el mismo tipo de entidad que existe en la tabla `usuarios` de la base de datos.
 
 ---
 
