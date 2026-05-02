@@ -1,276 +1,391 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Club de billar Breakpoint, página oficial">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/css/style.css" />
-        <link rel="icon" href="/assets/img/logo.png" type="image/png">
-        <title>Club Billar Breakpoint</title>       
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Club de billar Breakpoint, página oficial"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="\css\style.css" />
+    <link rel="icon" href="\assets\img\logo.png" type="image/png" />
+    <title>Club Billar Breakpoint</title>
+  </head>
 
-    <body>
-            <!-- CABECERA -->
-        <header class="header">
-            <div class="header-content">
-                <div class="logo-header">
-                    <a href="/index.html">
-                        <img src="/assets/img/logo.png" alt="Logo Club de Billar BreakPoint">
-                    </a>
-                    <div>
-                        <h1 class="logo-nombre">BreakPoint</h1>
-                        <span class="logo-eslogan">Encuentra tu punto y rompe la partida.</span>
-                    </div>
-                </div>
-                <nav class="menu">
-                    <ul class="menu-lista">
-                        <li><a href="/index.html">Inicio</a></li>
-                        <li class="menu-servicios">
-                            <a>Servicios</a>
-                                <ul class="servicios-desplegable">
-                                    <li><a href="/servicios/socio.html">Hazte socio</a></li>
-                                    <li><a href="/servicios/taller.html">Taller de reparaciones</a></li>
-                                    <li><a href="/servicios/tienda.html">Tienda</a></li>
-                                </ul>
-                        </li>
-                        <li><a href="/torneos.html">Torneos</a></li>
-                        <li><a href="/galeria.html">Galería</a></li>
-                        <li><a href="/conocenos.html">Conócenos</a></li>
-                        <li><a href="/contacto.html">Contacto</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+  <body>
+    <!-- CABECERA -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo-header">
+          <a href="/index.html">
+            <img
+              src="/assets/img/logo.png"
+              alt="Logo Club de Billar BreakPoint"
+            />
+          </a>
+          <div>
+            <h1 class="logo-nombre">BreakPoint</h1>
+            <span class="logo-eslogan"
+              >Encuentra tu punto y rompe la partida.</span
+            >
+          </div>
+        </div>
+        <nav class="menu">
+          <ul class="menu-lista">
+            <li><a href="/index.html">Inicio</a></li>
+            <li class="menu-servicios">
+              <a>Servicios</a>
+              <ul class="servicios-desplegable">
+                <li><a href="/servicios/socio.html">Hazte socio</a></li>
+                <li>
+                  <a href="/servicios/taller.html">Taller de reparaciones</a>
+                </li>
+                <li><a href="/servicios/tienda.html">Tienda</a></li>
+              </ul>
+            </li>
+            <li><a href="/torneos.html">Torneos</a></li>
+            <li><a href="/galeria.html">Galería</a></li>
+            <li><a href="/conocenos.html">Conócenos</a></li>
+            <li><a href="/contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-
-            <!-- HERO VIDEO -->
-        <section class="index-video-hero">
-            <div class="index-video-wrapper">
-                <video
-                    src="/assets/video/video.webm" autoplay muted loop playsinline class="index-video"></video>
-                <!--
+    <!-- HERO VIDEO -->
+    <section class="index-video-hero">
+      <div class="index-video-wrapper">
+        <video
+          src="/assets/video/video.webm"
+          autoplay
+          muted
+          loop
+          playsinline
+          class="index-video"
+        ></video>
+        <!--
                 <div class="index-video-overlay">
                     <span class="index-video-categoria">BreakPoint</span>
                     <h2 class="index-video-titulo">Encuentra tu punto.<br>Rompe la partida.</h2>
                     <a href="/conocenos.html" class="boton-primario">Conócenos</a>
                 </div>
                 -->
+      </div>
+    </section>
+
+    <div class="divisor"></div>
+
+    <!-- CONOCENOS -->
+    <section class="index-presentacion">
+      <div class="index-presentacion-texto">
+        <h2>Sobre nosotros</h2>
+        <p>
+          BreakPoint nace de una idea sencilla: crear el club de billar que su
+          fundador, Adrián no encontró cuando llegó a la provincia de
+          Pontevedra. Un espacio cuidado, con mesas en perfecto estado, frente a
+          las Islas Cíes, donde el disfrute y la desconexión van de la mano.
+        </p>
+        <p>
+          Si quieres conocer esta historia, pincha
+          <a href="/conocenos.html">aquí</a>.
+        </p>
+      </div>
+      <div class="index-presentacion-img">
+        <img
+          src="/assets/img/breakpoint/breakpoint (4).jpg"
+          alt="Bolas de billar moviéndose después de el saque"
+        />
+      </div>
+    </section>
+
+    <div class="divisor"></div>
+
+    <!-- RESEÑAS -->
+    <section class="index-resenas">
+      <div class="index-resenas-cabecera">
+        <span class="taller-categoria">Comunidad · Google Reviews</span>
+        <h2>Lo que dicen nuestros clientes</h2>
+      </div>
+
+      <div class="index-resenas-track-outer">
+        <div class="index-resenas-track">
+          <div class="index-resena-card">
+            <div class="index-resena-header">
+              <div class="index-resena-avatar">MG</div>
+              <div>
+                <p class="index-resena-nombre">Manuel G.</p>
+                <div class="index-resena-estrellas">★★★★★</div>
+              </div>
             </div>
-        </section>
+            <p class="index-resena-texto">
+              "Un club de billar de verdad. Las mesas están en perfecto estado y
+              el ambiente es inmejorable. Desde que me hice socio vengo casi
+              todos los fines de semana."
+            </p>
+          </div>
 
-        <div class="divisor"></div>
-
-            <!-- CONOCENOS -->
-        <section class="index-presentacion">
-            <div class="index-presentacion-texto">
-                <h2>Sobre nosotros</h2>
-                <p>
-                    BreakPoint nace de una idea sencilla: crear el club de billar que su fundador, Adrián no encontró cuando llegó a la provincia de Pontevedra. Un espacio cuidado, con mesas en perfecto estado, frente a las Islas Cíes, donde el disfrute y la desconexión van de la mano. 
-                </p>
-                <p>
-                    Si quieres conocer esta historia, pincha <a href="/conocenos.html">aquí</a>.
-                </p>
+          <div class="index-resena-card">
+            <div class="index-resena-header">
+              <div class="index-resena-avatar">LF</div>
+              <div>
+                <p class="index-resena-nombre">Laura F.</p>
+                <div class="index-resena-estrellas">★★★★★</div>
+              </div>
             </div>
-            <div class="index-presentacion-img">
-                <img src="/assets/img/breakpoint/breakpoint (4).jpg" alt="Bolas de billar moviéndose después de el saque">
+            <p class="index-resena-texto">
+              "Las vistas desde la terraza son una pasada. Tomarte un café
+              mirando a las Cíes entre partida y partida no tiene precio.
+              Totalmente recomendable."
+            </p>
+          </div>
+
+          <div class="index-resena-card">
+            <div class="index-resena-header">
+              <div class="index-resena-avatar">JR</div>
+              <div>
+                <p class="index-resena-nombre">Javier R.</p>
+                <div class="index-resena-estrellas">★★★★★</div>
+              </div>
             </div>
-        </section>
+            <p class="index-resena-texto">
+              "Participé en el último torneo y la organización fue excelente.
+              Trofeos bonitos, buen ambiente y nivel competitivo. Volveré
+              seguro."
+            </p>
+          </div>
 
-
-    <div class="divisor"></div>    
-
-            <!-- RESEÑAS -->
-        <section class="index-resenas">
-            <div class="index-resenas-cabecera">
-                <span class="taller-categoria">Comunidad · Google Reviews</span>
-                <h2>Lo que dicen nuestros clientes</h2>
+          <div class="index-resena-card">
+            <div class="index-resena-header">
+              <div class="index-resena-avatar">SR</div>
+              <div>
+                <p class="index-resena-nombre">Sofía R.</p>
+                <div class="index-resena-estrellas">★★★★★</div>
+              </div>
             </div>
+            <p class="index-resena-texto">
+              "Me llevé el taco a reparar al taller y quedó como nuevo. Precio
+              justo y entrega rápida. El trato de Adrián es siempre cercano y
+              profesional."
+            </p>
+          </div>
 
-            <div class="index-resenas-track-outer">
-                <div class="index-resenas-track">
-
-                    <div class="index-resena-card">
-                        <div class="index-resena-header">
-                            <div class="index-resena-avatar">MG</div>
-                            <div>
-                                <p class="index-resena-nombre">Manuel G.</p>
-                                <div class="index-resena-estrellas">★★★★★</div>
-                            </div>
-                        </div>
-                        <p class="index-resena-texto">"Un club de billar de verdad. Las mesas están en perfecto estado y el ambiente es inmejorable. Desde que me hice socio vengo casi todos los fines de semana."</p>
-                    </div>
-
-                    <div class="index-resena-card">
-                        <div class="index-resena-header">
-                            <div class="index-resena-avatar">LF</div>
-                            <div>
-                                <p class="index-resena-nombre">Laura F.</p>
-                                <div class="index-resena-estrellas">★★★★★</div>
-                            </div>
-                        </div>
-                        <p class="index-resena-texto">"Las vistas desde la terraza son una pasada. Tomarte un café mirando a las Cíes entre partida y partida no tiene precio. Totalmente recomendable."</p>
-                    </div>
-
-                    <div class="index-resena-card">
-                        <div class="index-resena-header">
-                            <div class="index-resena-avatar">JR</div>
-                            <div>
-                                <p class="index-resena-nombre">Javier R.</p>
-                                <div class="index-resena-estrellas">★★★★★</div>
-                            </div>
-                        </div>
-                        <p class="index-resena-texto">"Participé en el último torneo y la organización fue excelente. Trofeos bonitos, buen ambiente y nivel competitivo. Volveré seguro."</p>
-                    </div>
-
-                    <div class="index-resena-card">
-                        <div class="index-resena-header">
-                            <div class="index-resena-avatar">SR</div>
-                            <div>
-                                <p class="index-resena-nombre">Sofía R.</p>
-                                <div class="index-resena-estrellas">★★★★★</div>
-                            </div>
-                        </div>
-                        <p class="index-resena-texto">"Me llevé el taco a reparar al taller y quedó como nuevo. Precio justo y entrega rápida. El trato de Adrián es siempre cercano y profesional."</p>
-                    </div>
-
-                    <div class="index-resena-card">
-                        <div class="index-resena-header">
-                            <div class="index-resena-avatar">PC</div>
-                            <div>
-                                <p class="index-resena-nombre">Pablo C.</p>
-                                <div class="index-resena-estrellas">★★★★★</div>
-                            </div>
-                        </div>
-                        <p class="index-resena-texto">"Buscaba un sitio para practicar sin tener que compartir mesa con gente aleatoria. El plan socio lo resuelve todo. Reserva online, sin esperas."</p>
-                    </div>
-
-                    <div class="index-resena-card">
-                        <div class="index-resena-header">
-                            <div class="index-resena-avatar">AM</div>
-                            <div>
-                                <p class="index-resena-nombre">Ana M.</p>
-                                <div class="index-resena-estrellas">★★★★★</div>
-                            </div>
-                        </div>
-                        <p class="index-resena-texto">"Vine con mi pareja con el pack pareja y repetiremos sin duda. El local es precioso, moderno y acogedor a la vez. La terraza en verano es de otro nivel."</p>
-                    </div>
-
-                    <!-- CLONES para loop sin corte -->
-                    <div class="index-resena-card">
-                        <div class="index-resena-header">
-                            <div class="index-resena-avatar">MG</div>
-                            <div><p class="index-resena-nombre">Manuel G.</p><div class="index-resena-estrellas">★★★★★</div></div>
-                        </div>
-                        <p class="index-resena-texto">"Un club de billar de verdad. Las mesas están en perfecto estado y el ambiente es inmejorable. Desde que me hice socio vengo casi todos los fines de semana."</p>
-                    </div>
-                    <div class="index-resena-card">
-                        <div class="index-resena-header">
-                            <div class="index-resena-avatar">LF</div>
-                            <div><p class="index-resena-nombre">Laura F.</p><div class="index-resena-estrellas">★★★★★</div></div>
-                        </div>
-                        <p class="index-resena-texto">"Las vistas desde la terraza son una pasada. Tomarte un café mirando a las Cíes entre partida y partida no tiene precio. Totalmente recomendable."</p>
-                    </div>
-                    <div class="index-resena-card">
-                        <div class="index-resena-header">
-                            <div class="index-resena-avatar">JR</div>
-                            <div><p class="index-resena-nombre">Javier R.</p><div class="index-resena-estrellas">★★★★★</div></div>
-                        </div>
-                        <p class="index-resena-texto">"Participé en el último torneo y la organización fue excelente. Trofeos bonitos, buen ambiente y nivel competitivo. Volveré seguro."</p>
-                    </div>
-                    <div class="index-resena-card">
-                        <div class="index-resena-header">
-                            <div class="index-resena-avatar">SR</div>
-                            <div><p class="index-resena-nombre">Sofía R.</p><div class="index-resena-estrellas">★★★★★</div></div>
-                        </div>
-                        <p class="index-resena-texto">"Me llevé el taco a reparar al taller y quedó como nuevo. Precio justo y entrega rápida. El trato de Adrián es siempre cercano y profesional."</p>
-                    </div>
-                    <div class="index-resena-card">
-                        <div class="index-resena-header">
-                            <div class="index-resena-avatar">PC</div>
-                            <div><p class="index-resena-nombre">Pablo C.</p><div class="index-resena-estrellas">★★★★★</div></div>
-                        </div>
-                        <p class="index-resena-texto">"Buscaba un sitio para practicar sin tener que compartir mesa con gente aleatoria. El plan socio lo resuelve todo. Reserva online, sin esperas."</p>
-                    </div>
-                    <div class="index-resena-card">
-                        <div class="index-resena-header">
-                            <div class="index-resena-avatar">AM</div>
-                            <div><p class="index-resena-nombre">Ana M.</p><div class="index-resena-estrellas">★★★★★</div></div>
-                        </div>
-                        <p class="index-resena-texto">"Vine con mi pareja con el pack pareja y repetiremos sin duda. El local es precioso, moderno y acogedor a la vez. La terraza en verano es de otro nivel."</p>
-                    </div>
-
-                </div>
+          <div class="index-resena-card">
+            <div class="index-resena-header">
+              <div class="index-resena-avatar">PC</div>
+              <div>
+                <p class="index-resena-nombre">Pablo C.</p>
+                <div class="index-resena-estrellas">★★★★★</div>
+              </div>
             </div>
-        </section>
+            <p class="index-resena-texto">
+              "Buscaba un sitio para practicar sin tener que compartir mesa con
+              gente aleatoria. El plan socio lo resuelve todo. Reserva online,
+              sin esperas."
+            </p>
+          </div>
 
-        <div class="divisor"></div>
-
-            <!-- CALENDARIOS -->
-        <section class="index-calendarios">
-            <div class="index-cal-cabecera">
-                <span class="taller-categoria">Torneos · Calendarios</span>
-                <h2>Descarga el calendario en tu dispositivo</h2>
-                <p>Consulta todas las fechas y no te pierdas ningún torneo.</p>
+          <div class="index-resena-card">
+            <div class="index-resena-header">
+              <div class="index-resena-avatar">AM</div>
+              <div>
+                <p class="index-resena-nombre">Ana M.</p>
+                <div class="index-resena-estrellas">★★★★★</div>
+              </div>
             </div>
+            <p class="index-resena-texto">
+              "Vine con mi pareja con el pack pareja y repetiremos sin duda. El
+              local es precioso, moderno y acogedor a la vez. La terraza en
+              verano es de otro nivel."
+            </p>
+          </div>
 
-            <div class="index-cal-lista">
-
-                <a href="/assets/img/calendarios/calendario_circuito_gallego_absoluto.jpg" download class="index-cal-fila">
-                    <span class="index-cal-titulo">Circuito Gallego Absoluto</span>
-                    <span class="index-cal-dl">Descargar PDF →</span>
-                </a>
-
-                <a href="/assets/img/calendarios/calendario_circuito_gallego_femenino.jpg" download class="index-cal-fila">
-                    <span class="index-cal-titulo">Circuito Gallego Femenino</span>
-                    <span class="index-cal-dl">Descargar PDF →</span>
-                </a>
-
-                <a href="/assets/img/calendarios/calendario_circuíto_gallego_junior.jpg" download class="index-cal-fila">
-                    <span class="index-cal-titulo">Circuito Gallego Junior</span>
-                    <span class="index-cal-dl">Descargar PDF →</span>
-                </a>
-
-                <a href="/assets/img/calendarios/calendario_pool_2025-2026.jpg" download class="index-cal-fila index-cal-fila--activa">
-                    <span class="index-cal-titulo">Nacionales e Internacionales 25/26</span>
-                    <span class="index-cal-dl">Descargar PDF →</span>
-                </a>
-
+          <!-- CLONES para loop sin corte -->
+          <div class="index-resena-card">
+            <div class="index-resena-header">
+              <div class="index-resena-avatar">MG</div>
+              <div>
+                <p class="index-resena-nombre">Manuel G.</p>
+                <div class="index-resena-estrellas">★★★★★</div>
+              </div>
             </div>
-        </section>
-
-
-    <div class="divisor"></div>    
-
-
-            <!-- FOOTER -->
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="logo-footer">
-                    <img src="/assets/img/logo.png">
-                    <strong>Club Billar BreakPoint</strong>
-                </div>
-                <div class="footer-datos">
-                    <span>info@breakpoint.es</span>
-                    <p class="footer-copy">&copy; 2026 BreakPoint. Todos los derechos reservados.</p>
-                </div>
-                <div class="rrss">
-                    <a href="#">
-                        <img src="/assets/img/Iconos/facebook1.png" class="footer-rrss" alt="Icono de Facebook">
-                    </a>
-                    <a href="#">
-                        <img src="/assets/img/Iconos/instagram1.png" class="footer-rrss" alt="Icono de Instagram">
-                    </a>
-                    <a href="#">
-                        <img src="/assets/img/Iconos/whatsapp1.png" class="footer-rrss" alt="Icono de Whatsapp">
-                    </a>
-                </div>
+            <p class="index-resena-texto">
+              "Un club de billar de verdad. Las mesas están en perfecto estado y
+              el ambiente es inmejorable. Desde que me hice socio vengo casi
+              todos los fines de semana."
+            </p>
+          </div>
+          <div class="index-resena-card">
+            <div class="index-resena-header">
+              <div class="index-resena-avatar">LF</div>
+              <div>
+                <p class="index-resena-nombre">Laura F.</p>
+                <div class="index-resena-estrellas">★★★★★</div>
+              </div>
             </div>
-        </footer>
+            <p class="index-resena-texto">
+              "Las vistas desde la terraza son una pasada. Tomarte un café
+              mirando a las Cíes entre partida y partida no tiene precio.
+              Totalmente recomendable."
+            </p>
+          </div>
+          <div class="index-resena-card">
+            <div class="index-resena-header">
+              <div class="index-resena-avatar">JR</div>
+              <div>
+                <p class="index-resena-nombre">Javier R.</p>
+                <div class="index-resena-estrellas">★★★★★</div>
+              </div>
+            </div>
+            <p class="index-resena-texto">
+              "Participé en el último torneo y la organización fue excelente.
+              Trofeos bonitos, buen ambiente y nivel competitivo. Volveré
+              seguro."
+            </p>
+          </div>
+          <div class="index-resena-card">
+            <div class="index-resena-header">
+              <div class="index-resena-avatar">SR</div>
+              <div>
+                <p class="index-resena-nombre">Sofía R.</p>
+                <div class="index-resena-estrellas">★★★★★</div>
+              </div>
+            </div>
+            <p class="index-resena-texto">
+              "Me llevé el taco a reparar al taller y quedó como nuevo. Precio
+              justo y entrega rápida. El trato de Adrián es siempre cercano y
+              profesional."
+            </p>
+          </div>
+          <div class="index-resena-card">
+            <div class="index-resena-header">
+              <div class="index-resena-avatar">PC</div>
+              <div>
+                <p class="index-resena-nombre">Pablo C.</p>
+                <div class="index-resena-estrellas">★★★★★</div>
+              </div>
+            </div>
+            <p class="index-resena-texto">
+              "Buscaba un sitio para practicar sin tener que compartir mesa con
+              gente aleatoria. El plan socio lo resuelve todo. Reserva online,
+              sin esperas."
+            </p>
+          </div>
+          <div class="index-resena-card">
+            <div class="index-resena-header">
+              <div class="index-resena-avatar">AM</div>
+              <div>
+                <p class="index-resena-nombre">Ana M.</p>
+                <div class="index-resena-estrellas">★★★★★</div>
+              </div>
+            </div>
+            <p class="index-resena-texto">
+              "Vine con mi pareja con el pack pareja y repetiremos sin duda. El
+              local es precioso, moderno y acogedor a la vez. La terraza en
+              verano es de otro nivel."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <a href="#" class="flecha-arriba">&#10094;</a>
+    <div class="divisor"></div>
 
-    </body>
+    <!-- CALENDARIOS -->
+    <section class="index-calendarios">
+      <div class="index-cal-cabecera">
+        <span class="taller-categoria">Torneos · Calendarios</span>
+        <h2>Descarga el calendario en tu dispositivo</h2>
+        <p>Consulta todas las fechas y no te pierdas ningún torneo.</p>
+      </div>
+
+      <div class="index-cal-lista">
+        <a
+          href="/assets/img/calendarios/calendario_circuito_gallego_absoluto.jpg"
+          download
+          class="index-cal-fila"
+        >
+          <span class="index-cal-titulo">Circuito Gallego Absoluto</span>
+          <span class="index-cal-dl">Descargar PDF →</span>
+        </a>
+
+        <a
+          href="/assets/img/calendarios/calendario_circuito_gallego_femenino.jpg"
+          download
+          class="index-cal-fila"
+        >
+          <span class="index-cal-titulo">Circuito Gallego Femenino</span>
+          <span class="index-cal-dl">Descargar PDF →</span>
+        </a>
+
+        <a
+          href="/assets/img/calendarios/calendario_circuíto_gallego_junior.jpg"
+          download
+          class="index-cal-fila"
+        >
+          <span class="index-cal-titulo">Circuito Gallego Junior</span>
+          <span class="index-cal-dl">Descargar PDF →</span>
+        </a>
+
+        <a
+          href="/assets/img/calendarios/calendario_pool_2025-2026.jpg"
+          download
+          class="index-cal-fila index-cal-fila--activa"
+        >
+          <span class="index-cal-titulo"
+            >Nacionales e Internacionales 25/26</span
+          >
+          <span class="index-cal-dl">Descargar PDF →</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="divisor"></div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="logo-footer">
+          <img src="/assets/img/logo.png" />
+          <strong>Club Billar BreakPoint</strong>
+        </div>
+        <div class="footer-datos">
+          <span>info@breakpoint.es</span>
+          <p class="footer-copy">
+            &copy; 2026 BreakPoint. Todos los derechos reservados.
+          </p>
+        </div>
+        <div class="rrss">
+          <a href="#">
+            <img
+              src="/assets/img/Iconos/facebook1.png"
+              class="footer-rrss"
+              alt="Icono de Facebook"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="/assets/img/Iconos/instagram1.png"
+              class="footer-rrss"
+              alt="Icono de Instagram"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="/assets/img/Iconos/whatsapp1.png"
+              class="footer-rrss"
+              alt="Icono de Whatsapp"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="flecha-arriba">&#10094;</a>
+  </body>
 </html>
