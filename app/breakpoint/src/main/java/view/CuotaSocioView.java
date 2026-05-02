@@ -3,7 +3,7 @@ package view;
 public class CuotaSocioView {
 
     public void mostrarMenuCuotaSocio() {
-        System.out.println("--- GESTIÓN DE CUOTAS ---");
+        System.out.println("\n--- GESTIÓN DE CUOTAS ---");
         System.out.println("1. Registrar pago de cuota");
         System.out.println("2. Listar cuotas");
         System.out.println("3. Buscar cuota");

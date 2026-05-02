@@ -169,22 +169,31 @@ public class ReservaController {
             return;
         }
 
-        System.out.println("Reservas encontradas:");
-        for (int i = 0; i < reservas.size(); i++) {
-            System.out.println("[" + (i + 1) + "] " + reservas.get(i));
+        System.out.println("Reservas activas encontradas:");
+        for (Reserva r : reservas) {
+            System.out.println(r);
         }
 
-        int seleccion = leerEntero("Selecciona el número de la reserva a modificar: ");
-        if (seleccion < 1 || seleccion > reservas.size()) {
-            System.out.println("Selección no válida.");
+        int idMesaActual = leerEntero("ID de la mesa de la reserva a modificar: ");
+        LocalDateTime horaInicioActual = leerFecha("Hora de inicio de la reserva a modificar (dd/MM/yyyy HH:mm): ");
+
+        Reserva reserva = null;
+        for (Reserva r : reservas) {
+            if (r.getMesa().getIdMesa() == idMesaActual && r.getHoraInicio().equals(horaInicioActual)) {
+                reserva = r;
+                break;
+            }
+        }
+
+        if (reserva == null) {
+            System.out.println("No se ha encontrado ninguna reserva con esa mesa y hora de inicio.");
             return;
         }
 
-        Reserva reserva = reservas.get(seleccion - 1);
         LocalDateTime horaInicioOriginal = reserva.getHoraInicio();
 
-        int idMesa = leerEntero("Nuevo ID de mesa: ");
-        Mesa mesa = mesaDAO.obtenerMesaPorId(idMesa);
+        int idMesaNueva = leerEntero("Nuevo ID de mesa: ");
+        Mesa mesa = mesaDAO.obtenerMesaPorId(idMesaNueva);
         if (mesa == null) {
             System.out.println("No se ha encontrado ninguna mesa con dicho ID.");
             return;
@@ -233,18 +242,26 @@ public class ReservaController {
             return;
         }
 
-        System.out.println("Reservas encontradas:");
-        for (int i = 0; i < reservas.size(); i++) {
-            System.out.println("[" + (i + 1) + "] " + reservas.get(i));
+        System.out.println("Reservas activas encontradas:");
+        for (Reserva r : reservas) {
+            System.out.println(r);
         }
 
-        int seleccion = leerEntero("Selecciona el número de la reserva a cancelar: ");
-        if (seleccion < 1 || seleccion > reservas.size()) {
-            System.out.println("Selección no válida.");
+        int idMesa = leerEntero("ID de la mesa de la reserva a cancelar: ");
+        LocalDateTime horaInicio = leerFecha("Hora de inicio de la reserva a cancelar (dd/MM/yyyy HH:mm): ");
+
+        Reserva reserva = null;
+        for (Reserva r : reservas) {
+            if (r.getMesa().getIdMesa() == idMesa && r.getHoraInicio().equals(horaInicio)) {
+                reserva = r;
+                break;
+            }
+        }
+
+        if (reserva == null) {
+            System.out.println("No se ha encontrado ninguna reserva con esa mesa y hora de inicio.");
             return;
         }
-
-        Reserva reserva = reservas.get(seleccion - 1);
 
         System.out.print("¿Estás seguro de que deseas cancelar esta reserva? (s/n): ");
         String confirmacion = scanner.nextLine().trim().toLowerCase();

@@ -3,7 +3,7 @@ package view;
 public class InscripcionView {
 
     public void mostrarMenuInscripcion() {
-        System.out.println("--- GESTIÓN DE INSCRIPCIONES ---");
+        System.out.println("\n--- GESTIÓN DE INSCRIPCIONES ---");
         System.out.println("1. Inscribir socio en torneo");
         System.out.println("2. Listar inscripciones");
         System.out.println("3. Buscar inscripción");

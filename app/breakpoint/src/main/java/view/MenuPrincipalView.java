@@ -3,7 +3,7 @@ package view;
 public class MenuPrincipalView {
 
     public void mostrarMenuPrincipal() {
-        System.out.println("--- BREAKPOINT – CLUB DE BILLAR ---");
+        System.out.println("\n--- BREAKPOINT – CLUB DE BILLAR ---");
         System.out.println("Menú de Gestión");
         System.out.println("1. Gestionar usuarios");
         System.out.println("2. Gestionar socios");

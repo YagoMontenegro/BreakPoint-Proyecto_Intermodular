@@ -22,7 +22,7 @@ public class Mesa {
 
     @Override
     public String toString() {
-        return "\n--- MESA ---" +
+        return  "\n--- MESA ---" +
                 "\nID Mesa: " + idMesa +
                 "\nEstado: " + estadoMesa;
     }

@@ -3,7 +3,7 @@ package view;
 public class SocioView {
 
     public void mostrarMenuSocio() {
-        System.out.println("--- GESTIÓN DE SOCIOS ---");
+        System.out.println("\n--- GESTIÓN DE SOCIOS ---");
         System.out.println("1. Dar de alta socio");
         System.out.println("2. Listar socios");
         System.out.println("3. Buscar socio");

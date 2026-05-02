@@ -3,7 +3,7 @@ package view;
 public class MesaView {
 
     public void mostrarMenuMesa() {
-        System.out.println("--- GESTIÓN DE MESAS ---");
+        System.out.println("\n--- GESTIÓN DE MESAS ---");
         System.out.println("1. Dar de alta mesa");
         System.out.println("2. Listar mesas");
         System.out.println("3. Buscar mesa");

@@ -3,7 +3,7 @@ package view;
 public class ReservaView {
 
     public void mostrarMenuReserva() {
-        System.out.println("--- GESTIÓN DE RESERVAS ---");
+        System.out.println("\n--- GESTIÓN DE RESERVAS ---");
         System.out.println("1. Crear reserva");
         System.out.println("2. Listar reservas");
         System.out.println("3. Buscar reserva");
