@@ -1,8 +1,8 @@
-# BreakPoint – Portal Web del Club de Billar
+# BreakPoint – Portal Web y Sistema de Gestión del Club de Billar
 
 ## ¿Qué es este proyecto?
 
-BreakPoint es el portal web de un club de billar ficticio. La idea era crear una web completa para gestionar la presencia online del club, donde los usuarios puedan informarse de los servicios, apuntarse como socios, consultar torneos y contactar con el club.
+BreakPoint es el portal web y el sistema de gestión interna de un club de billar ficticio. El proyecto incluye una web completa para la presencia online del club y una aplicación Java con conexión JDBC a base de datos para la gestión de usuarios, socios, mesas, reservas, cuotas y torneos.
 
 Este portal web forma parte del Proyecto Intermodular de 1º de DAW, y conecta los módulos de Lenguajes de Marcas, Bases de Datos, Programación, Entornos de Desarrollo y Sistemas Informáticos.
 
@@ -10,15 +10,16 @@ Este portal web forma parte del Proyecto Intermodular de 1º de DAW, y conecta l
 
 ## ¿Qué problema resuelve?
 
-Un club de billar real necesita una forma de darse a conocer, gestionar socios y organizar torneos. Hasta ahora todo eso se hacía de forma manual (llamadas, papel, boca a boca). Esta web centraliza esa información y sienta las bases para una futura gestión digital de reservas y socios.
+Un club de billar real necesita una forma de darse a conocer, gestionar socios y organizar torneos. Hasta ahora todo eso se hacía de forma manual (llamadas, papel, boca a boca). Esta web centraliza la información pública del club y la aplicación Java permite gestionar digitalmente el núcleo del negocio: altas de usuarios y socios, control de cuotas, reservas de mesas, organización de torneos e inscripciones.
 
 ---
 
 ## Tecnologías usadas
 
 - **HTML5** y **CSS3** para la maquetación y diseño del portal
-- **XAMPP** (Apache + MariaDB + phpMyAdmin) para el servidor local y la base de datos del club
-- **Java** con **JDBC** para la aplicación de gestión (en desarrollo)
+- **XAMPP** (Apache + MariaDB/MySQL + phpMyAdmin) para el servidor local y la base de datos del club
+- **Java 23** con **JDBC** (MySQL Connector/J 9.6.0) para la aplicación de gestión
+- **Maven** para la gestión de dependencias del proyecto Java
 - **Git / GitHub** para el control de versiones
 
 ---
@@ -38,10 +39,82 @@ Un club de billar real necesita una forma de darse a conocer, gestionar socios y
 
 ---
 
+## Aplicación Java — Sistema de gestión interna
+
+La aplicación de consola permite al personal del club gestionar el día a día del negocio. Está conectada a la base de datos `breakpoint` mediante JDBC y ofrece CRUD completo sobre las siguientes entidades:
+
+| Módulo de gestión | Funcionalidades |
+|---|---|
+| Usuarios | Alta, listado, búsqueda por teléfono, modificación y eliminación |
+| Socios | Alta desde usuario existente, listado, búsqueda, cambio de estado y baja |
+| Cuotas | Generación de cuotas, consulta por socio, registro de pago y eliminación |
+| Mesas | Alta de mesas, listado, cambio de estado y eliminación |
+| Reservas | Creación con cálculo automático de coste (socio: 0 €/h, no socio: 6 €/h), listado, búsqueda, modificación y cancelación |
+| Torneos | Creación, listado, modificación y eliminación |
+| Inscripciones | Inscripción de socios a torneos, consulta, registro de resultados y eliminación |
+
+### Arquitectura del código (MVC)
+
+El proyecto sigue el patrón Modelo-Vista-Controlador con separación en paquetes:
+
+```
+src/main/java/
+├── Main.java                  ← Punto de entrada
+├── model/                     ← Clases de dominio (POJOs)
+│   ├── Usuario.java
+│   ├── Socio.java             (hereda de Usuario)
+│   ├── Mesa.java
+│   ├── Reserva.java
+│   ├── Torneo.java
+│   ├── CuotaSocio.java
+│   └── Inscripcion.java
+├── dao/                       ← Acceso a datos (JDBC)
+│   ├── UsuarioDAO.java
+│   ├── SocioDAO.java
+│   ├── MesaDAO.java
+│   ├── ReservaDAO.java
+│   ├── TorneoDAO.java
+│   ├── CuotaSocioDAO.java
+│   └── InscripcionDAO.java
+├── controller/                ← Lógica de la aplicación
+│   ├── GestionAppController.java
+│   ├── UsuarioController.java
+│   ├── SocioController.java
+│   ├── MesaController.java
+│   ├── ReservaController.java
+│   ├── TorneoController.java
+│   ├── CuotaSocioController.java
+│   └── InscripcionController.java
+├── view/                      ← Menús de consola
+│   ├── MenuPrincipalView.java
+│   ├── UsuarioView.java
+│   ├── SocioView.java
+│   ├── MesaView.java
+│   ├── ReservaView.java
+│   ├── TorneoView.java
+│   ├── CuotaSocioView.java
+│   └── InscripcionView.java
+├── database/                  ← Conexión y esquema
+│   ├── ConexionBBDD.java
+│   └── SchemaBBDD.java
+└── utils/                     ← Utilidades
+    └── InputHelper.java
+```
+
+### Mejora MPO — Ampliación de Programación
+
+La mejora estructural respecto al proyecto base de Programación ha consistido en:
+
+- **Separación en capas MVC**: la lógica de negocio (controller), el acceso a datos (dao), la presentación (view) y el dominio (model) están en paquetes independientes con responsabilidades claras.
+- **Clase `SchemaBBDD`**: interfaz que centraliza todos los nombres de tablas y columnas como constantes, evitando strings dispersos por el código y facilitando el mantenimiento.
+- **Clase `InputHelper`**: utilidad que centraliza la lectura y validación de datos de entrada (texto, email, teléfono, fechas, números) para evitar duplicidad de código entre controllers.
+- **Herencia `Socio extends Usuario`**: uso natural de POO que refleja la relación real del negocio (un socio es un usuario con información adicional).
+
+---
+
 ## Estructura del repositorio
 
 ```
-
 BreakPoint-Proyecto_Intermodular/
 ├── diagrams/
 │   ├── Diagrama E-R.png
@@ -54,13 +127,21 @@ BreakPoint-Proyecto_Intermodular/
 │   │   ├── Flujo de trabajo.PNG
 │   │   └── Inicio del flujo de trabajo.PNG
 │   └── sistemas/
-│       └── informe_tecnico.md
+│       ├── informe_tecnico.md
+│       └── capturas/
 ├── sql/
 │   ├── create_tables.sql
 │   ├── insert_data.sql
 │   └── queries.sql
 ├── src/
-│   └── (en desarrollo)
+│   └── main/java/
+│       ├── Main.java
+│       ├── model/
+│       ├── dao/
+│       ├── controller/
+│       ├── view/
+│       ├── database/
+│       └── utils/
 ├── web/
 │   ├── assets/
 │   │   ├── img/
@@ -76,6 +157,7 @@ BreakPoint-Proyecto_Intermodular/
 │   ├── galeria.html
 │   ├── index.html
 │   └── torneos.html
+├── pom.xml
 └── README.md
 ```
 
@@ -93,7 +175,7 @@ La base de datos se llama `breakpoint` y gestiona las siguientes entidades:
 - **torneos** – torneos organizados por el club
 - **inscripciones** – participación de socios en torneos
 
-Los archivos SQL para la creación de la base de datos, inserción de datos y consultas de ejemplo, están en la carpeta `/sql/`.
+Los archivos SQL para la creación de la base de datos, inserción de datos y consultas de ejemplo, están en la carpeta `/sql/`. La documentación detallada de la base de datos se encuentra en `/docs/bbdd/README.md`.
 
 ---
 
@@ -105,7 +187,7 @@ No requiere instalación. Se puede abrir directamente en el navegador o desplega
 
 Con VS Code y la extensión Live Server:
 1. Abrir la carpeta del proyecto
-2. Click derecho sobre `index.html` → "Open with Live Server"
+2. Click derecho sobre `web/index.html` → "Open with Live Server"
 
 ### Base de datos
 
@@ -123,9 +205,14 @@ mysql -u root breakpoint < sql/create_tables.sql
 mysql -u root breakpoint < sql/insert_data.sql
 ```
 
-### Aplicación Java (en desarrollo)
+### Aplicación Java
 
-> Pendiente de implementación. Se añadirá cuando esté lista la parte de programación con JDBC.
+Requisitos: JDK 17 o superior y Maven instalados. XAMPP con MySQL en ejecución y la base de datos `breakpoint` creada.
+
+1. Abrir el proyecto en IntelliJ IDEA (o cualquier IDE compatible con Maven)
+2. Esperar a que Maven descargue las dependencias (`mysql-connector-j`)
+3. Ejecutar `Main.java`
+4. Interactuar con la aplicación a través del menú de consola
 
 ---
 
@@ -135,7 +222,10 @@ mysql -u root breakpoint < sql/insert_data.sql
 - [x] Base de datos diseñada y creada
 - [x] Datos de prueba insertados
 - [x] Consultas SQL funcionales
-- [ ] Aplicación Java con JDBC (en desarrollo)
+- [x] Aplicación Java con JDBC finalizada
+- [x] CRUD completo de todas las entidades
+- [x] Arquitectura MVC implementada
+- [x] Informe técnico de Sistemas Informáticos
 
 ---
 

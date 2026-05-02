@@ -6,13 +6,13 @@
 
 ## 1. Tipo de sistema donde se ejecuta
 
-El proyecto BreakPoint está compuesto por dos partes: el portal web estático (HTML + CSS) y la aplicación de gestión con base de datos (Java + MySQL + JDBC).
+El proyecto BreakPoint está compuesto por dos partes: el portal web estático (HTML + CSS) y la aplicación de gestión con base de datos (Java + MariaDB/MySQL + JDBC).
 
 Para el desarrollo y las pruebas, todo se ejecuta en un **PC de usuario** estándar. No hace falta ningún servidor externo ni nada especial, lo que facilita bastante el despliegue.
 
 Dicho esto, si en el futuro se quisiese desplegar la web para que la pueda visitar cualquiera, habría que subirla a un servidor. Por ahora, el entorno de ejecución es local.
 
-**Justificación:** Es un proyecto académico y de tamaño reducido. No tiene sentido montar un servidor dedicado. Con un PC normal y un servidor local (XAMPP o similar) es más que suficiente para desarrollar y probar todo.
+**Justificación:** Es un proyecto académico y de tamaño reducido. No tiene sentido montar un servidor dedicado. Con un PC normal y XAMPP (que incluye Apache y MariaDB/MySQL) es más que suficiente para desarrollar y probar todo.
 
 ---
 
@@ -46,7 +46,7 @@ Dicho esto, si en el futuro se quisiese desplegar la web para que la pueda visit
 **Sistema operativo utilizado para el desarrollo:** Windows 10 Pro (64 bits)
 
 **¿Por qué Windows?**  
-Es el sistema que tengo instalado y con el que me siento más cómodo. Además, todas las herramientas que uso (VS Code, IntelliJ IDEA, MySQL Workbench, XAMPP) tienen versión para Windows y la instalación es bastante sencilla.
+Es el sistema que tengo instalado y con el que me siento más cómodo. Además, todas las herramientas que uso (VS Code, IntelliJ IDEA, XAMPP) tienen versión para Windows y la instalación es bastante sencilla.
 
 El proyecto también sería compatible con **macOS** y con distribuciones **Linux** como Ubuntu, ya que todas las tecnologías usadas son multiplataforma. Solo habría que ajustar alguna ruta en la configuración.
 
@@ -58,71 +58,81 @@ A continuación se explica cómo preparar el entorno para poder ejecutar el proy
 
 ### 4.1 Herramientas necesarias
 
+- **XAMPP** – incluye Apache (servidor web) y MariaDB/MySQL (base de datos) con phpMyAdmin como interfaz gráfica de administración  
+  Descarga: https://www.apachefriends.org/
 - **Visual Studio Code** – para editar el HTML y el CSS  
   Descarga: https://code.visualstudio.com/
 - **Extensión Live Server** (dentro de VS Code) – para ver la web en el navegador con recarga automática
-- **MySQL 8.x** – para la base de datos  
-  Descarga: https://dev.mysql.com/downloads/mysql/
-- **MySQL Workbench** (opcional pero muy útil) – interfaz gráfica para gestionar la base de datos  
-  Descarga: https://dev.mysql.com/downloads/workbench/
 - **JDK 17 o superior** – para ejecutar la aplicación Java  
   Descarga: https://adoptium.net/
-- **IntelliJ IDEA Community** – IDE para desarrollar la parte Java  
+- **IntelliJ IDEA Community** – IDE para desarrollar y ejecutar la parte Java  
   Descarga: https://www.jetbrains.com/idea/download/
 
 ---
 
 ### 4.2 Instalación paso a paso
 
-**Paso 1 – Clonar el repositorio**
+**Paso 1 – Instalar XAMPP**
+
+1. Descargar XAMPP desde https://www.apachefriends.org/
+2. Ejecutar el instalador y seguir el asistente (los componentes por defecto son suficientes)
+3. Al finalizar, abrir el panel de control de XAMPP
+4. Arrancar los módulos **Apache** y **MySQL** (deben quedar en estado "Running")
+
+**Paso 2 – Clonar el repositorio**
 
 ```bash
 git clone https://github.com/YagoMontenegro/BreakPoint-Proyecto_Intermodular.git
 cd BreakPoint-Proyecto_Intermodular
 ```
 
-**Paso 2 – Abrir la web**
+**Paso 3 – Abrir la web**
 
 1. Abrir VS Code
 2. Abrir la carpeta del proyecto: `Archivo > Abrir carpeta`
-3. Click derecho en `index.html` → "Open with Live Server"
+3. Click derecho en `web/index.html` → "Open with Live Server"
 4. Se abrirá el navegador en `http://127.0.0.1:5500`
 
-**Paso 3 – Crear la base de datos**
+**Paso 4 – Crear la base de datos**
 
-1. Abrir MySQL Workbench y conectarse al servidor local
-2. Ir a `File > Open SQL Script` y abrir `sql/create_tables.sql`
-3. Ejecutar con el botón del rayo (o Ctrl+Shift+Enter)
+1. Con XAMPP en ejecución (Apache y MySQL arrancados), abrir el navegador
+2. Acceder a `http://localhost/phpmyadmin`
+3. En la pestaña **SQL**, pegar el contenido de `sql/create_tables.sql` y ejecutarlo
 4. Repetir con `sql/insert_data.sql` para cargar los datos de prueba
 
-O bien desde la terminal de MySQL:
+O bien desde la consola de XAMPP (botón "Shell" en el panel de control):
 
 ```bash
-mysql -u root -p
+mysql -u root
 ```
 ```sql
-source /ruta/al/proyecto/sql/create_tables.sql;
-source /ruta/al/proyecto/sql/insert_data.sql;
+source C:/ruta/al/proyecto/sql/create_tables.sql;
+source C:/ruta/al/proyecto/sql/insert_data.sql;
 ```
 
-**Paso 4 – Aplicación Java (pendiente)**
+**Paso 5 – Ejecutar la aplicación Java**
 
-> Esta parte está en desarrollo. Se actualizará el README cuando esté lista.
+1. Abrir IntelliJ IDEA
+2. Importar el proyecto como proyecto Maven (`File > Open` → seleccionar la carpeta del proyecto)
+3. Esperar a que Maven descargue las dependencias (MySQL Connector/J)
+4. Asegurarse de que XAMPP tiene MySQL arrancado
+5. Ejecutar `Main.java`
+6. Interactuar con el menú de gestión en la consola
 
 ---
 
 ## 5. Usuarios, permisos y estructura
 
-### Usuarios del sistema MySQL
+### Usuarios del sistema MySQL (XAMPP)
 
 | Usuario | Permisos | Uso |
 |---|---|---|
 | `root` | Todos (administrador) | Solo para desarrollo local y configuración inicial |
 | `breakpoint_user` | SELECT, INSERT, UPDATE, DELETE sobre la BD `breakpoint` | Usuario de la aplicación Java |
 
-> Por seguridad, la aplicación Java no debería conectarse con el usuario root. Se debería crear un usuario con permisos limitados solo a la base de datos del proyecto.
+> Por seguridad, la aplicación Java no debería conectarse con el usuario root en un entorno de producción. Se debería crear un usuario con permisos limitados solo a la base de datos del proyecto.
 
-Ejemplo para crear el usuario limitado:
+Ejemplo para crear el usuario limitado (ejecutar en phpMyAdmin o en la consola de XAMPP):
 ```sql
 CREATE USER 'breakpoint_user'@'localhost' IDENTIFIED BY 'contraseña_segura';
 GRANT SELECT, INSERT, UPDATE, DELETE ON breakpoint.* TO 'breakpoint_user'@'localhost';
@@ -132,19 +142,40 @@ FLUSH PRIVILEGES;
 ### Estructura de carpetas del proyecto
 
 ```
-breakpoint/
-├── index.html               ← Página principal
-├── conocenos.html
-├── torneos.html
-├── galeria.html
-├── contacto.html
-├── servicios/               ← Páginas de servicios
-├── css/                     ← Hojas de estilo
-├── assets/                  ← Imágenes y videos del portal
-├── sql/                     ← Scripts de base de datos
-├── src/                     ← Código fuente Java (en desarrollo)
-└── docs/sistemas/           ← Este informe y capturas
+BreakPoint-Proyecto_Intermodular/
+├── web/                         ← Portal web (HTML + CSS)
+│   ├── index.html
+│   ├── conocenos.html
+│   ├── torneos.html
+│   ├── galeria.html
+│   ├── contacto.html
+│   ├── servicios/
+│   ├── css/
+│   └── assets/
+├── src/                         ← Código fuente Java (aplicación de gestión)
+│   └── main/java/
+│       ├── Main.java
+│       ├── model/
+│       ├── dao/
+│       ├── controller/
+│       ├── view/
+│       ├── database/
+│       └── utils/
+├── sql/                         ← Scripts de base de datos
+├── diagrams/                    ← Diagramas E/R y modelo relacional
+├── docs/                        ← Documentación
+│   ├── bbdd/
+│   ├── general/
+│   └── sistemas/
+│       ├── informe_tecnico.md
+│       └── capturas/
+└── pom.xml                      ← Configuración Maven
 ```
+
+### Dónde se guardan los datos
+
+- **Base de datos:** en el directorio de datos de XAMPP (por defecto `C:\xampp\mysql\data\breakpoint\`)
+- **Copias de seguridad:** se recomienda guardarlas fuera del directorio del proyecto, en otra unidad o en la nube
 
 ---
 
@@ -155,25 +186,28 @@ breakpoint/
 | Qué | Cada cuánto | Por qué |
 |---|---|---|
 | Contenido de la web (torneos, noticias) | Según necesidad | Los torneos cambian, hay que actualizar la info |
-| MySQL | Cada 6 meses | Para tener parches de seguridad |
+| XAMPP (Apache + MySQL) | Cada 6 meses | Para tener parches de seguridad |
 | JDK | Cada vez que salga LTS nueva | Mantener soporte y mejoras |
 | Contraseñas de acceso a la BD | Cada 3-6 meses | Buena práctica de seguridad |
 
 ### Copias de seguridad
 
-Se recomienda hacer una copia de seguridad de la base de datos regularmente. Con MySQL es bastante sencillo:
+Se recomienda hacer una copia de seguridad de la base de datos regularmente. Desde la consola de XAMPP (Shell):
 
 ```bash
-mysqldump -u root -p breakpoint > backup_breakpoint_FECHA.sql
+mysqldump -u root breakpoint > backup_breakpoint_FECHA.sql
 ```
+
+También se puede hacer desde phpMyAdmin: seleccionar la base de datos `breakpoint` → pestaña **Exportar** → ejecutar.
 
 Los backups deberían guardarse fuera del directorio del proyecto (por ejemplo en una carpeta `/backups` en otra unidad o en la nube).
 
 ### ¿Qué hacer si algo falla?
 
 - **La web no carga:** Comprobar que Live Server está activo. Revisar la consola del navegador (F12) por si hay errores en rutas de archivos.
-- **La base de datos no conecta:** Verificar que el servicio MySQL está arrancado. En Windows se puede comprobar desde el Administrador de tareas o con `services.msc`.
-- **Error en la aplicación Java:** Revisar los logs de la consola. Lo más habitual es un fallo en la cadena de conexión JDBC o en las credenciales.
+- **La base de datos no conecta:** Abrir el panel de control de XAMPP y verificar que el módulo MySQL está arrancado (debe estar en verde). Si no arranca, comprobar que el puerto 3306 no esté ocupado por otro programa.
+- **Error en la aplicación Java:** Revisar los logs de la consola. Lo más habitual es un fallo en la cadena de conexión JDBC (verificar que XAMPP tiene MySQL arrancado y que la base de datos `breakpoint` existe).
+- **phpMyAdmin no abre:** Comprobar que tanto Apache como MySQL están arrancados en el panel de XAMPP.
 
 ---
 
@@ -182,10 +216,8 @@ Los backups deberían guardarse fuera del directorio del proyecto (por ejemplo e
 Aunque es un proyecto local y académico, se han tenido en cuenta algunas medidas mínimas:
 
 - No se sube el archivo de configuración con contraseñas al repositorio de GitHub (o al menos no debería subirse)
-- El usuario de la base de datos de la aplicación tiene permisos limitados, no usa root
-- Las contraseñas de la base de datos no están hardcodeadas en el código, se configuran en un archivo separado
-
-Para un entorno de producción real habría que añadir más medidas (HTTPS, firewall, validación de entradas para evitar SQL Injection, etc.), pero para el nivel de este proyecto y siendo local, con esto es suficiente.
+- Se recomienda crear un usuario de base de datos con permisos limitados (`breakpoint_user`) en lugar de usar `root`
+- Para un entorno de producción real habría que añadir más medidas (HTTPS, firewall, validación de entradas para evitar SQL Injection, etc.), pero para el nivel de este proyecto y siendo local, con esto es suficiente
 
 ---
 
@@ -195,13 +227,13 @@ Para un entorno de producción real habría que añadir más medidas (HTTPS, fir
 
 Las evidencias incluyen:
 
-- Captura del portal web abierto en el navegador (`localhost`)
-- Captura de la base de datos creada en MySQL Workbench
-- Captura de las tablas con datos de prueba
-- Captura de alguna consulta SQL ejecutada correctamente
+- Captura del portal web abierto en el navegador (a través de Live Server)
+- Captura del panel de control de XAMPP con Apache y MySQL arrancados
+- Captura de phpMyAdmin con la base de datos `breakpoint` creada y las tablas con datos
+- Captura de alguna consulta SQL ejecutada correctamente en phpMyAdmin
+- Captura de la aplicación Java ejecutándose en consola (menú principal y alguna operación)
 
 ---
 
 *Informe elaborado para el módulo Sistemas Informáticos (0483) – 1º DAW*  
 *Proyecto Intermodular – Curso 2024/2025*
-

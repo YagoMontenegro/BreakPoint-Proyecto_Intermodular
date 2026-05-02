@@ -89,6 +89,8 @@ El portal y su base de datos digitalizan toda esa gestión:
 - Permite al personal del club acceder a la información desde cualquier dispositivo
 - Da al club una imagen profesional y moderna, acorde a su ubicación y filosofía
 
+> **Nota:** La aplicación Java gestiona el núcleo operativo del club (usuarios, socios, cuotas, mesas, reservas, torneos e inscripciones). Servicios como la tienda y el taller se gestionan de forma presencial y no están incluidos en la aplicación, ya que su naturaleza no requiere digitalización en esta fase del proyecto.
+
 ---
 
 ## 6. Tecnologías del proyecto
@@ -124,7 +126,8 @@ El portal y su base de datos digitalizan toda esa gestión:
 |---|---|---|
 | Lenguajes de Marcas | 0373 | Portal web completo (HTML + CSS) |
 | Bases de Datos | 0484 | BD `breakpoint` + scripts SQL + documentación |
-| Programación | 0485 | Aplicación Java con JDBC (en desarrollo) |
+| Programación | 0485 | Aplicación Java con JDBC (CRUD completo) |
+| MPO – Ampliación de Programación | — | Arquitectura MVC, herencia, `SchemaBBDD` |
 | Entornos de Desarrollo | 0487 | Repositorio GitHub con historial de commits y README |
 | Sistemas Informáticos | 0483 | Informe técnico del entorno de ejecución y capturas de pantalla |
 
