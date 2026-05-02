@@ -1,206 +1,309 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Galería de fotos del Club de Billar Breakpoint">
-        <link rel="stylesheet" href="/css/style.css" />
-        <link rel="icon" href="/assets/img/logo.png" type="image/png">
-        <title>Galería · Club Billar Breakpoint</title>       
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Club de billar Breakpoint, página oficial"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/img/logo.png" type="image/png" />
+    <title>Club Billar Breakpoint</title>
+  </head>
 
-    <body>
+  <body>
+    <!-- CABECERA -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo-header">
+          <a href="index.html">
+            <img
+              src="assets/img/logo.png"
+              alt="Logo Club de Billar BreakPoint"
+            />
+          </a>
+          <div>
+            <h1 class="logo-nombre">BreakPoint</h1>
+            <span class="logo-eslogan"
+              >Encuentra tu punto y rompe la partida.</span
+            >
+          </div>
+        </div>
+        <nav class="menu">
+          <ul class="menu-lista">
+            <li><a href="index.html">Inicio</a></li>
+            <li class="menu-servicios">
+              <a>Servicios</a>
+              <ul class="servicios-desplegable">
+                <li><a href="servicios/socio.html">Hazte socio</a></li>
+                <li>
+                  <a href="servicios/taller.html">Taller de reparaciones</a>
+                </li>
+                <li><a href="servicios/tienda.html">Tienda</a></li>
+              </ul>
+            </li>
+            <li><a href="torneos.html">Torneos</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="conocenos.html">Conócenos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-            <!-- CABECERA -->
-        <header class="header">
-            <div class="header-content">
-                <div class="logo-header">
-                    <a href="/index.html">
-                        <img src="/assets/img/logo.png" alt="Logo Club de Billar BreakPoint">
-                    </a>
-                    <div>
-                        <h1 class="logo-nombre">BreakPoint</h1>
-                        <span class="logo-eslogan">Encuentra tu punto y rompe la partida.</span>
-                    </div>
-                </div>
-                <nav class="menu">
-                    <ul class="menu-lista">
-                        <li><a href="/index.html">Inicio</a></li>
-                        <li class="menu-servicios">
-                            <a>Servicios</a>
-                                <ul class="servicios-desplegable">
-                                    <li><a href="/servicios/socio.html">Hazte socio</a></li>
-                                    <li><a href="/servicios/taller.html">Taller de reparaciones</a></li>
-                                    <li><a href="/servicios/tienda.html">Tienda</a></li>
-                                </ul>
-                        </li>
-                        <li><a href="/torneos.html">Torneos</a></li>
-                        <li><a href="/galeria.html">Galería</a></li>
-                        <li><a href="/conocenos.html">Conócenos</a></li>
-                        <li><a href="/contacto.html">Contacto</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+    <main>
+      <!-- HERO -->
+      <section class="galeria-hero">
+        <h2>Galería</h2>
+        <p class="galeria-subtitulo">
+          Una mirada al corazón del club: las mesas, los momentos y las personas
+          que hacen de BreakPoint algo especial.
+        </p>
+      </section>
 
-        <main>
+      <!-- NAVEGACIÓN INTERNA -->
+      <nav class="galeria-nav">
+        <ul class="galeria-nav-lista">
+          <li>
+            <a href="#instalaciones" class="galeria-nav-enlace"
+              >Instalaciones</a
+            >
+          </li>
+          <li><a href="#torneos" class="galeria-nav-enlace">Torneos</a></li>
+          <li>
+            <a href="#equipo" class="galeria-nav-enlace">Equipo y ambiente</a>
+          </li>
+        </ul>
+      </nav>
 
-                <!-- HERO -->
-            <section class="galeria-hero">
-                <h2>Galería</h2>
-                <p class="galeria-subtitulo">Una mirada al corazón del club: las mesas, los momentos y las personas que hacen de BreakPoint algo especial.</p>
-            </section>
+      <div class="divisor"></div>
 
-                <!-- NAVEGACIÓN INTERNA -->
-            <nav class="galeria-nav">
-                <ul class="galeria-nav-lista">
-                    <li><a href="#instalaciones" class="galeria-nav-enlace">Instalaciones</a></li>
-                    <li><a href="#torneos" class="galeria-nav-enlace">Torneos</a></li>
-                    <li><a href="#equipo" class="galeria-nav-enlace">Equipo y ambiente</a></li>
-                </ul>
-            </nav>
+      <!-- INSTALACIONES -->
+      <section class="galeria-seccion" id="instalaciones">
+        <div class="galeria-seccion-cabecera">
+          <h2 class="galeria-seccion-titulo">Instalaciones</h2>
+          <p class="galeria-seccion-desc">
+            Mesas profesionales, iluminación de competición y un ambiente
+            diseñado para disfrutar y jugar en serio.
+          </p>
+        </div>
 
-            <div class="divisor"></div>
+        <div class="galeria-grid">
+          <figure class="galeria-item galeria-item--grande">
+            <img
+              src="/assets/img/galeria/instalaciones/instalaciones (7).jpg"
+              alt="Vista de las bolas colocadas para 9 ball"
+            />
+          </figure>
+          <figure class="galeria-item">
+            <img
+              src="/assets/img/galeria/instalaciones/instalaciones (1).jpg"
+              alt="Vista de las mesas con iluminación"
+            />
+          </figure>
+          <figure class="galeria-item">
+            <img
+              src="/assets/img/galeria/instalaciones/instalaciones (6).jpg"
+              alt="Terraza del club con una puesta de sol y vistas a las Islas Cíes"
+            />
+          </figure>
+          <figure class="galeria-item">
+            <img
+              src="/assets/img/galeria/instalaciones/instalaciones (4).jpg"
+              alt="Vista de las mesas con iluminación"
+            />
+          </figure>
+          <figure class="galeria-item">
+            <img
+              src="/assets/img/galeria/instalaciones/instalaciones (5).jpg"
+              alt="Vista de la zona de descanso con televisiones en las columnas"
+            />
+          </figure>
+          <figure class="galeria-item galeria-item--ancha">
+            <img
+              src="/assets/img/galeria/instalaciones/instalaciones (3).jpg"
+              alt="Vista de 4 mesas preparadas para comenzar la partida"
+            />
+          </figure>
+          <figure class="galeria-item">
+            <img
+              src="/assets/img/galeria/instalaciones/instalaciones (2).jpg"
+              alt="Vista de las mesas con iluminación"
+            />
+          </figure>
+        </div>
+      </section>
 
-                <!-- INSTALACIONES -->
-            <section class="galeria-seccion" id="instalaciones">
-                <div class="galeria-seccion-cabecera">
-                    <h2 class="galeria-seccion-titulo">Instalaciones</h2>
-                    <p class="galeria-seccion-desc">Mesas profesionales, iluminación de competición y un ambiente diseñado para disfrutar y jugar en serio.</p>
-                </div>
+      <div class="divisor"></div>
 
-                <div class="galeria-grid">
-                    <figure class="galeria-item galeria-item--grande">
-                        <img src="/assets/img/galeria/instalaciones/instalaciones (7).jpg" alt="Vista de las bolas colocadas para 9 ball">
-                    </figure>
-                    <figure class="galeria-item">
-                        <img src="/assets/img/galeria/instalaciones/instalaciones (1).jpg" alt="Vista de las mesas con iluminación">
-                    </figure>
-                    <figure class="galeria-item">
-                        <img src="/assets/img/galeria/instalaciones/instalaciones (6).jpg" alt="Terraza del club con una puesta de sol y vistas a las Islas Cíes">
-                    </figure>
-                    <figure class="galeria-item">
-                        <img src="/assets/img/galeria/instalaciones/instalaciones (4).jpg" alt="Vista de las mesas con iluminación">
-                    </figure>
-                    <figure class="galeria-item">
-                        <img src="/assets/img/galeria/instalaciones/instalaciones (5).jpg" alt="Vista de la zona de descanso con televisiones en las columnas">
-                    </figure>
-                    <figure class="galeria-item galeria-item--ancha">
-                        <img src="/assets/img/galeria/instalaciones/instalaciones (3).jpg" alt="Vista de 4 mesas preparadas para comenzar la partida">
-                    </figure>
-                    <figure class="galeria-item">
-                        <img src="/assets/img/galeria/instalaciones/instalaciones (2).jpg" alt="Vista de las mesas con iluminación">
-                    </figure>
-                </div>
-            </section>
+      <!-- TORNEOS -->
+      <section class="galeria-seccion" id="torneos">
+        <div class="galeria-seccion-cabecera">
+          <h2 class="galeria-seccion-titulo">Torneos</h2>
+          <p class="galeria-seccion-desc">Competición, emoción y buen juego.</p>
+        </div>
 
-            <div class="divisor"></div>
+        <div class="galeria-grid">
+          <figure class="galeria-item">
+            <img
+              src="/assets/img/galeria/torneos/torneos (7).jpg"
+              alt="Jugadores en las mesas jugando"
+            />
+          </figure>
+          <figure class="galeria-item galeria-item--grande">
+            <img
+              src="/assets/img/galeria/torneos/torneos (4).jpg"
+              alt="Trofeo en forma de copa"
+            />
+          </figure>
+          <figure class="galeria-item">
+            <img
+              src="/assets/img/galeria/torneos/torneos (5).jpg"
+              alt="Trofeos y polos personalizados"
+            />
+          </figure>
+          <figure class="galeria-item">
+            <img
+              src="/assets/img/galeria/torneos/torneos (3).jpg"
+              alt="Jugador colocando las bolas para 10 ball"
+            />
+          </figure>
+          <figure class="galeria-item">
+            <img
+              src="/assets/img/galeria/torneos/torneos (1).jpg"
+              alt="Grabados de un taco de billar"
+            />
+          </figure>
+          <figure class="galeria-item">
+            <img
+              src="/assets/img/galeria/torneos/torneos (6).jpg"
+              alt="Taco de billar y guante apoyados en una mesa con bolas en la banda"
+            />
+          </figure>
+          <figure class="galeria-item galeria-item--ancha">
+            <img
+              src="/assets/img/galeria/torneos/torneos (22).jpg"
+              alt="Cuatro trofeos colocados en una mesa"
+            />
+          </figure>
+        </div>
+      </section>
 
-                <!-- TORNEOS -->
-            <section class="galeria-seccion" id="torneos">
-                <div class="galeria-seccion-cabecera">
-                    <h2 class="galeria-seccion-titulo">Torneos</h2>
-                    <p class="galeria-seccion-desc">Competición, emoción y buen juego.</p>
-                </div>
+      <div class="divisor"></div>
 
-                <div class="galeria-grid">
-                    <figure class="galeria-item">
-                        <img src="/assets/img/galeria/torneos/torneos (7).jpg" alt="Jugadores en las mesas jugando">
-                    </figure>
-                    <figure class="galeria-item galeria-item--grande">
-                        <img src="/assets/img/galeria/torneos/torneos (4).jpg" alt="Trofeo en forma de copa">
-                    </figure>
-                    <figure class="galeria-item">
-                        <img src="/assets/img/galeria/torneos/torneos (5).jpg" alt="Trofeos y polos personalizados">
-                    </figure>
-                    <figure class="galeria-item">
-                        <img src="/assets/img/galeria/torneos/torneos (3).jpg" alt="Jugador colocando las bolas para 10 ball">
-                    </figure>
-                    <figure class="galeria-item">
-                        <img src="/assets/img/galeria/torneos/torneos (1).jpg" alt="Grabados de un taco de billar">
-                    </figure>
-                    <figure class="galeria-item">
-                        <img src="/assets/img/galeria/torneos/torneos (6).jpg" alt="Taco de billar y guante apoyados en una mesa con bolas en la banda">
-                    </figure>
-                    <figure class="galeria-item galeria-item--ancha">
-                        <img src="/assets/img/galeria/torneos/torneos (22).jpg" alt="Cuatro trofeos colocados en una mesa">
-                    </figure>
-                </div>
-            </section>
+      <!-- EQUIPO Y AMBIENTE -->
+      <section class="galeria-seccion" id="equipo">
+        <div class="galeria-seccion-cabecera">
+          <h2 class="galeria-seccion-titulo">Equipo y ambiente</h2>
+          <p class="galeria-seccion-desc">
+            Somos más que un club. Somos una comunidad.
+          </p>
+        </div>
 
-            <div class="divisor"></div>
+        <div class="galeria-grid">
+          <figure class="galeria-item galeria-item--ancha">
+            <img
+              src="/assets/img/galeria/ambiente/ambiente (3).jpg"
+              alt="Integrantes del club"
+            />
+          </figure>
+          <figure class="galeria-item">
+            <img
+              src="/assets/img/galeria/ambiente/ambiente (4).jpg"
+              alt="Socios disfrutando de una tarde de juego"
+            />
+          </figure>
+          <figure class="galeria-item">
+            <img
+              src="/assets/img/galeria/ambiente/ambiente (5).jpg"
+              alt="Jugadora profesional enseñando técnicas de juego"
+            />
+          </figure>
+          <figure class="galeria-item galeria-item--grande">
+            <img
+              src="/assets/img/galeria/ambiente/ambiente (1).jpg"
+              alt="Celebración del aniversario del club con socios"
+            />
+          </figure>
+          <figure class="galeria-item">
+            <img
+              src="/assets/img/galeria/ambiente/ambiente (6).jpg"
+              alt="Socios el club simulano un tiro entre 3 jugaores"
+            />
+          </figure>
+          <figure class="galeria-item">
+            <img
+              src="/assets/img/galeria/ambiente/ambiente (7).jpg"
+              alt="Socios jóvenes con el pulgar en alto"
+            />
+          </figure>
+          <figure class="galeria-item">
+            <img
+              src="/assets/img/galeria/ambiente/ambiente (2).jpg"
+              alt="Socios jóvenes abrazaos con el marcador del resultado al fondo"
+            />
+          </figure>
+        </div>
+      </section>
 
-                <!-- EQUIPO Y AMBIENTE -->
-            <section class="galeria-seccion" id="equipo">
-                <div class="galeria-seccion-cabecera">
-                    <h2 class="galeria-seccion-titulo">Equipo y ambiente</h2>
-                    <p class="galeria-seccion-desc">Somos más que un club. Somos una comunidad.</p>
-                </div>
+      <div class="divisor"></div>
 
-                <div class="galeria-grid">
-                    <figure class="galeria-item galeria-item--ancha">
-                        <img src="/assets/img/galeria/ambiente/ambiente (3).jpg" alt="Integrantes del club">
-                    </figure>
-                    <figure class="galeria-item">
-                        <img src="/assets/img/galeria/ambiente/ambiente (4).jpg" alt="Socios disfrutando de una tarde de juego">
-                    </figure>
-                    <figure class="galeria-item">
-                        <img src="/assets/img/galeria/ambiente/ambiente (5).jpg" alt="Jugadora profesional enseñando técnicas de juego">
-                    </figure>
-                    <figure class="galeria-item galeria-item--grande">
-                        <img src="/assets/img/galeria/ambiente/ambiente (1).jpg" alt="Celebración del aniversario del club con socios">
-                    </figure>
-                    <figure class="galeria-item">
-                        <img src="/assets/img/galeria/ambiente/ambiente (6).jpg" alt="Socios el club simulano un tiro entre 3 jugaores">
-                    </figure>
-                    <figure class="galeria-item">
-                        <img src="/assets/img/galeria/ambiente/ambiente (7).jpg" alt="Socios jóvenes con el pulgar en alto">
-                    </figure>
-                    <figure class="galeria-item">
-                        <img src="/assets/img/galeria/ambiente/ambiente (2).jpg" alt="Socios jóvenes abrazaos con el marcador del resultado al fondo">
-                    </figure>
-                </div>
-            </section>
+      <!-- CTA FINAL -->
+      <section class="galeria-cta">
+        <h2>¿Te gustaría formar parte de esto?</h2>
+        <p>Hazte socio y vive en primera persona todo lo que ves aquí.</p>
+        <a href="/servicios/socio.html" class="boton-primario">Hazte socio</a>
+      </section>
+    </main>
 
-            <div class="divisor"></div>
+    <div class="divisor"></div>
 
-                <!-- CTA FINAL -->
-            <section class="galeria-cta">
-                <h2>¿Te gustaría formar parte de esto?</h2>
-                <p>Hazte socio y vive en primera persona todo lo que ves aquí.</p>
-                <a href="/servicios/socio.html" class="boton-primario">Hazte socio</a>
-            </section>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="logo-footer">
+          <img src="/assets/img/logo.png" alt="Logo BreakPoint" />
+          <strong>Club Billar BreakPoint</strong>
+        </div>
+        <div class="footer-datos">
+          <span>info@breakpoint.es</span>
+          <p class="footer-copy">
+            &copy; 2026 BreakPoint. Todos los derechos reservados.
+          </p>
+        </div>
+        <div class="rrss">
+          <a href="#">
+            <img
+              src="/assets/img/Iconos/facebook1.png"
+              class="facebook"
+              alt="Facebook"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="/assets/img/Iconos/instagram1.png"
+              class="instagram"
+              alt="Instagram"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="/assets/img/Iconos/whatsapp1.png"
+              class="whatsapp"
+              alt="WhatsApp"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
 
-        </main>
-
-        <div class="divisor"></div>
-
-            <!-- FOOTER -->
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="logo-footer">
-                    <img src="/assets/img/logo.png" alt="Logo BreakPoint">
-                    <strong>Club Billar BreakPoint</strong>
-                </div>
-                <div class="footer-datos">
-                    <span>info@breakpoint.es</span>
-                    <p class="footer-copy">&copy; 2026 BreakPoint. Todos los derechos reservados.</p>
-                </div>
-                <div class="rrss">
-                    <a href="#">
-                        <img src="/assets/img/Iconos/facebook1.png" class="facebook" alt="Facebook">
-                    </a>
-                    <a href="#">
-                        <img src="/assets/img/Iconos/instagram1.png" class="instagram" alt="Instagram">
-                    </a>
-                    <a href="#">
-                        <img src="/assets/img/Iconos/whatsapp1.png" class="whatsapp" alt="WhatsApp">
-                    </a>
-                </div>
-            </div>
-        </footer>
-
-        <a href="#" class="flecha-arriba">&#10094;</a>
-
-    </body>
+    <a href="#" class="flecha-arriba">&#10094;</a>
+  </body>
 </html>
